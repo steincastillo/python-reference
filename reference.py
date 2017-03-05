@@ -367,7 +367,13 @@ family['kids'].remove('lisa')       # removes 'lisa'
 # string substitution using a dictionary
 'youngest child is %(baby)s' % family   # returns 'youngest child is maggie'
 
-
+#nested dictionaries
+w = {"id": 2340108, "name": "my city", "main":{"temp":5.67, "humidity": 86, "pressure": 1009}}
+w["id"]     #returns 2340108
+w["name"]       # returns "my city"
+w["main"]       #  returns {"temp":5.67, "humidity": 86, "pressure": 1009}
+w["main"]["temp"]               #returns 5.67
+w["main"]["pressure"]       #returns 1009
 
 ### SETS ###
 ## properties: unordered, iterable, mutable, can contain multiple data types
