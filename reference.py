@@ -281,6 +281,10 @@ s.isdigit()         # returns False (returns True if every character in the stri
 s.find('like')      # returns index of first occurrence (2), but doesn't support regex
 s.find('hate')      # returns -1 since not found
 s.replace('like', 'love')    # replaces all instances of 'like' with 'love'
+s.rjust(10, '-')        # returns '----------I like you'
+s.capitalize()      # returns 'I Like You'
+s.upper()           # returns 'I LIKE YOU'
+s.lower()           # returns 'i like you'
 
 # split a string into a list of substrings separated by a delimiter
 s.split(' ')        # returns ['I', 'like', 'you']
@@ -291,6 +295,8 @@ s2.split(',')       # returns ['a', ' an', ' the']
 # join a list of strings into one string using a delimiter
 stooges = ['larry', 'curly', 'moe']
 ' '.join(stooges)   # returns 'larry curly moe'
+'<->'.join(stooges) # returns 'larry<->curly<->moe'
+' '.join(reversed(stooges)) # returns 'moe curly larry'
 
 # concatenate strings
 s3 = 'The meaning of life is'
@@ -300,11 +306,13 @@ s3 + ' ' + s4       # returns 'The meaning of life is 42'
 # remove whitespace from start and end of a string
 s5 = '  ham and cheese  '
 s5.strip()          # returns 'ham and cheese'
+s5. strip('ands')
 
 # string substitutions: all of these return 'raining cats and dogs'
 'raining %s and %s' % ('cats', 'dogs')                       # old way
 'raining {} and {}'.format('cats', 'dogs')                   # new way
 'raining {arg1} and {arg2}'.format(arg1='cats', arg2='dogs') # named arguments
+'message: {s3} is {s4}'.format(**locals())  # returns message: the meaning of life is 42
 
 # string formatting
 # more examples: https://mkaz.tech/python-string-format.html
