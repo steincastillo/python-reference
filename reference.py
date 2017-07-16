@@ -169,6 +169,7 @@ simpsons.remove('bart')                 # search for first instance and remove i
 simpsons.pop(0)                         # remove element 0 and return it
 del simpsons[0]                         # remove element 0 (does not return it)
 simpsons[0] = 'krusty'                  # replace element 0
+simpsons.reverse()                  # reverses the list
 
 # concatenate lists (slower than 'extend' method)
 neighbors = simpsons + ['ned', 'rod', 'todd']
@@ -564,6 +565,19 @@ while count < 5:
 
 
 ### COMPREHENSIONS ###
+
+# A list comprehension is an expression and loop (with an optional condition)
+# enclosed in brackets:
+# [item for item in iterable]
+# [expression for item in iterable]
+# [expression for item in iterable if condition]
+
+# examples:
+a = [2**i for i in range(13)]
+a = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
+
+a = [y for y in range(1900, 1940) if y%4 == 0]
+a = [1900, 1904, 1908, 1912, 1916, 1920, 1924, 1928, 1932, 1936]
 
 # for loop to create a list of cubes
 nums = [1, 2, 3, 4, 5]
