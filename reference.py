@@ -1,7 +1,11 @@
 '''
 Python Quick Reference
-https://github.com/justmarkham/python-reference
 
+https://github.com/steincastillo/python-reference.git
+Edited by: Stein Castillo
+http://www.stein-castillo.com
+
+forked from:  https://github.com/justmarkham/python-reference
 By Kevin Markham (kevin@dataschool.io)
 http://www.dataschool.io
 
