@@ -25,6 +25,7 @@ Table of Contents:
     For Loops and While Loops
     Comprehensions
     Map and Filter
+    Collections
 '''
 
 
@@ -357,6 +358,7 @@ len(family)         # returns 3
 family.keys()       # keys: ['dad', 'mom', 'size']
 family.values()     # values: ['homer', 'marge', 6]
 family.items()      # key-value pairs: [('dad', 'homer'), ('mom', 'marge'), ('size', 6)]
+sorted(family.keys())   # Returns a sorted list of the dict keys. -> good to use in dict iterations
 
 # modify a dictionary (does not return the dictionary)
 family['cat'] = 'snowball'              # add a new entry
@@ -379,6 +381,10 @@ family['kids'].remove('lisa')       # removes 'lisa'
 
 # string substitution using a dictionary
 'youngest child is %(baby)s' % family   # returns 'youngest child is maggie'
+
+# Iterating over dictionaries
+for key in sorted(family.keys()):
+    print (key, family[key])
 
 #nested dictionaries
 w = {"id": 2340108, "name": "my city", "main":{"temp":5.67, "humidity": 86, "pressure": 1009}}
@@ -654,3 +660,17 @@ filter(lambda x: x % 2 == 0, nums)      # returns [0, 2, 4]
 
 # equivalent list comprehension
 [num for num in nums if num % 2 == 0]
+
+### COLLECTIONS ###
+
+# Python's collections module implements specialized container data types
+# providing high-performance alternatives to the general purpose built-in containers.
+
+# Counters
+# A specialized Counter type (subclass for counting objects) is provided by Python's collections.Counter:
+from collections import Counter
+seq1 = [1, 2, 3 ,5, 1, 2, 5, 5, 2, 1, 4]
+seq_count = Counter(seq1)       # Counter({1: 3, 2: 3, 5: 3, 3: 1, 4: 1})
+seq_count.most_common()     #  [(1, 3), (2, 3), (5, 3), (3, 1), (4, 1)] -> returns the count of the elements in the dict
+seq_count.most_common(2)    # [(1, 3), (2, 3)] -> returns the 2 most commo elements
+
