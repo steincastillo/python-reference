@@ -26,6 +26,7 @@ Table of Contents:
     Comprehensions
     Map and Filter
     Collections
+    Classes and objects
 '''
 
 
@@ -495,7 +496,6 @@ min_max_num = min_max(nums)         # min_max_num = (1, 3)
 min_num, max_num = min_max(nums)    # min_num = 1, max_num = 3
 
 
-
 ### ANONYMOUS (LAMBDA) FUNCTIONS ###
 ## primarily used to temporarily define a function for use by another function
 
@@ -514,19 +514,6 @@ sorted(simpsons, key=last_letter)
 
 # sort a list of strings by the last letter (using lambda)
 sorted(simpsons, key=lambda word: word[-1])
-
-
-### Classes and objects (Object Oriented Programming) ###
-#Class definition
-class myClass(self):
-
-#Constructor definiton
-class myClass(self):
-    def __init__ (self, parm1, parm2):
-        self.parm1 = parm1
-        self.parm2 = parm2
-        
-
 
 
 ### FOR LOOPS AND WHILE LOOPS ###
@@ -571,7 +558,6 @@ count = 0
 while count < 5:
     print('This will print 5 times')
     count += 1    # equivalent to 'count = count + 1'
-
 
 
 ### COMPREHENSIONS ###
@@ -640,7 +626,6 @@ fruit_lengths = {fruit:len(fruit) for fruit in fruits}              # {'apple': 
 fruit_indices = {fruit:index for index, fruit in enumerate(fruits)} # {'apple': 0, 'banana': 1, 'cherry': 2}
 
 
-
 ### MAP AND FILTER ###
 
 # 'map' applies a function to every element of a sequence
@@ -674,3 +659,13 @@ seq_count = Counter(seq1)       # Counter({1: 3, 2: 3, 5: 3, 3: 1, 4: 1})
 seq_count.most_common()     #  [(1, 3), (2, 3), (5, 3), (3, 1), (4, 1)] -> returns the count of the elements in the dict
 seq_count.most_common(2)    # [(1, 3), (2, 3)] -> returns the 2 most commo elements
 
+
+### CLASSES AND OBJECTS (Object Oriented Programming) ###
+#Class definition
+class myClass(self):
+
+#Constructor definiton
+class myClass(self):
+    def __init__ (self, parm1, parm2):
+        self.parm1 = parm1
+        self.parm2 = parm2
