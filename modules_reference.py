@@ -7,6 +7,7 @@ http://www.stein-castillo.com
 
 Table of Contents:
     numpy
+    pandas
 '''
 
 ### NUMPY ###
@@ -33,3 +34,23 @@ a.ndim              # Returns array dimensions: 1
 c.ndim              # Retruns array dimensions: 2
 a.shape            # Returns a tuple with the array shape: (3,)
 c.shape            # Retruns a tuple with array shape: (2, 3)
+
+
+### PANDAS ###
+import pandas as pd         # Standard module import
+
+
+# Reading datasets
+dataframe = pd.read_csv(file)                                               # Imports a CSV file as dataframe
+dataframe = pd.read_csv(file, delimiter=r"\s+")                   # Imports a <SPACE> separated file
+dataframe = pd.read_csv(file, delim_whitespace=True)     # Imports a <SPACE> separated file
+dataframe = pd.read_csv(file, header = None)                    # Imports a file that has no headers
+dataframe = pd.read_csv(file, na_filter = False)                  # na_filter=False converts all nam into empty strings
+dataframe.drop('feature', axis = 1)                                        # Eliminates a column 'feature' from the dataframe
+dataframe = pd.read_csv(file).drop('feature', axis = 1)       # Reads the dataframe and eliminates the column feature
+
+# Convert dataset into numpy array
+dataset =  dataframe.values
+
+# Describe the dataset (features, count, mean, std dev, min, etc)
+dataframe.describe()
