@@ -41,13 +41,27 @@ import pandas as pd         # Standard module import
 
 
 # Reading datasets
-dataframe = pd.read_csv(file)                                               # Imports a CSV file as dataframe
-dataframe = pd.read_csv(file, delimiter=r"\s+")                   # Imports a <SPACE> separated file
-dataframe = pd.read_csv(file, delim_whitespace=True)     # Imports a <SPACE> separated file
-dataframe = pd.read_csv(file, header = None)                    # Imports a file that has no headers
-dataframe = pd.read_csv(file, na_filter = False)                  # na_filter=False converts all nam into empty strings
-dataframe.drop('feature', axis = 1)                                        # Eliminates a column 'feature' from the dataframe
-dataframe = pd.read_csv(file).drop('feature', axis = 1)       # Reads the dataframe and eliminates the column feature
+dataframe = pd.read_csv(file)                                   # Imports a CSV file as dataframe
+dataframe = pd.read_csv(file, delimiter=r"\s+")                 # Imports a <SPACE> separated file
+dataframe = pd.read_csv(file, delim_whitespace=True)     		# Imports a <SPACE> separated file
+dataframe = pd.read_csv(file, header = None)                  	# Imports a file that has no headers
+dataframe = pd.read_csv(file, na_filter = False)              	# na_filter=False converts all nam into empty strings
+dataframe.drop('feature', axis = 1)                           	# Eliminates a column 'feature' from the dataframe
+																# axis = 0 indicates a row, axis = 1 indicates a column
+dataframe = pd.read_csv(file).drop('feature', axis = 1)       	# Reads the dataframe and eliminates the column feature
+
+
+# Create an empty dataframe
+dataframe = pd.dataFrame(data = np.nan, index = [0, 1, 2, 3, 4], columns = ['A', 'B'])
+
+# Dataframe manipulation
+df1 = dataframe['feature']							# Creates a new dataframe (df1) with a copy of a feature from dataframe
+dataframe = dataframe.replace(np.NaN, 0)			# Replaces all NaN values with 0
+
+dataframe.loc['index1']								# Returns the row/observation with label <index1>
+dataframe.iloc[line]								# Returns the row/observation of position <line>
+dataFrame.iloc[r1:r2]								# Returns the rows/observations within range <r1>:<r2>
+dataFrame.iloc[-1]									# Returns the last observation of the datafram
 
 # Convert dataset into numpy array
 dataset =  dataframe.values
