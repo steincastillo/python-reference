@@ -30,7 +30,6 @@ Table of Contents:
 '''
 
 
-
 ### IMPORTS ###
 
 # 'generic import' of math module
@@ -52,7 +51,6 @@ import datetime as dt
 
 # show all functions in math module
 dir(math)
-
 
 
 ### DATA TYPES ###
@@ -86,7 +84,6 @@ bool('two')
 bool([2])
 
 
-
 ### MATH ###
 
 # basic operations
@@ -102,7 +99,6 @@ bool([2])
 from __future__ import division
 10 / 4          # true division (returns 2.5)
 10 // 4         # floor division (returns 2)
-
 
 
 ### COMPARISONS AND BOOLEAN OPERATIONS ###
@@ -121,7 +117,6 @@ x == 5
 5 > 3 or 5 < 3
 not False
 False or not False and True     # evaluation order: not, and, or
-
 
 
 ### CONDITIONAL STATEMENTS ###
@@ -150,7 +145,6 @@ if x > 0: print('positive')
 # single-line if/else statement (sometimes discouraged)
 # known as a 'ternary operator'
 'positive' if x > 0 else 'zero or negative'
-
 
 
 ### LISTS ###
@@ -227,7 +221,6 @@ num == same_num         # returns True (checks whether they have the same conten
 num == new_num          # returns True
 
 
-
 ### TUPLES ###
 ## properties: ordered, iterable, immutable, can contain multiple data types
 ## like lists, but they don't change size
@@ -260,7 +253,6 @@ sorted(tens)        # sorts by first element in tuple, then second element
 # tuple unpacking
 bart = ('male', 10, 'simpson')  # create a tuple
 (sex, age, surname) = bart      # assign three values at once
-
 
 
 ### STRINGS ###
@@ -330,7 +322,6 @@ print('first line\nsecond line')    # normal strings allow for escaped character
 print(r'first line\nfirst line')    # raw strings treat backslashes as literal characters
 
 
-
 ### DICTIONARIES ###
 ## properties: unordered, iterable, mutable, can contain multiple data types
 ## made of key-value pairs
@@ -395,6 +386,7 @@ w["main"]       #  returns {"temp":5.67, "humidity": 86, "pressure": 1009}
 w["main"]["temp"]               #returns 5.67
 w["main"]["pressure"]       #returns 1009
 
+
 ### SETS ###
 ## properties: unordered, iterable, mutable, can contain multiple data types
 ## made of unique elements (strings, numbers, or tuples)
@@ -429,7 +421,6 @@ languages.update(['go', 'spark'])  # add multiple elements (can also pass a set)
 
 # get a sorted list of unique elements from a list
 sorted(set([9, 0, 2, 1, 0]))    # returns [0, 1, 2, 9]
-
 
 
 ### DEFINING FUNCTIONS ###
@@ -561,7 +552,6 @@ while count < 5:
 
 
 ### COMPREHENSIONS ###
-
 # A list comprehension is an expression and loop (with an optional condition)
 # enclosed in brackets:
 # [item for item in iterable]
@@ -627,9 +617,9 @@ fruit_indices = {fruit:index for index, fruit in enumerate(fruits)} # {'apple': 
 
 
 ### MAP AND FILTER ###
-
 # 'map' applies a function to every element of a sequence
 # ...and returns a list (Python 2) or iterator (Python 3)
+
 simpsons = ['homer', 'marge', 'bart']
 map(len, simpsons)                      # returns [5, 5, 4]
 map(lambda word: word[-1], simpsons)    # returns ['r', 'e', 't']
@@ -646,8 +636,8 @@ filter(lambda x: x % 2 == 0, nums)      # returns [0, 2, 4]
 # equivalent list comprehension
 [num for num in nums if num % 2 == 0]
 
-### COLLECTIONS ###
 
+### COLLECTIONS ###
 # Python's collections module implements specialized container data types
 # providing high-performance alternatives to the general purpose built-in containers.
 
@@ -661,6 +651,7 @@ seq_count.most_common(2)    # [(1, 3), (2, 3)] -> returns the 2 most commo eleme
 
 
 ### CLASSES AND OBJECTS (Object Oriented Programming) ###
+
 #Class definition
 class myClass(self):
 

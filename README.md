@@ -8,7 +8,7 @@ Here's what I want in a reference guide:
 
 - **High-quality examples** that show the simplest possible usage of a given feature
 - **Explanatory comments**, and descriptive variable names that eliminate the need for some comments
-- Presented as a **single script (or notebook)**, so that I can keep it open and search it when needed
+- Presented as a **single script**, so that I can keep it open and search it when needed
 - **Code that can be run** from top to bottom, with the relevant objects defined nearby
 
 This is **not** written as a full-fledged Python tutorial, though I ordered the topics such that you can read it like a tutorial (i.e., each topic depends only on material preceding it).
@@ -20,22 +20,22 @@ The guide was written using Python 2 but is **fully compatible** with Python 3. 
 Click to jump to the relevant section of the script or the notebook:
 
 1. Imports ([script](reference.py#L33))
-2. Data Types ([script](reference.py#L57))
-3. Math ([script](reference.py#L89))
-4. Comparisons and Boolean Operations ([script](reference.py#L107))
-5. Conditional Statements ([script](reference.py#L126))
-6. Lists ([script](reference.py#L155))
-7. Tuples ([script](reference.py#230))
-8. Strings ([script](reference.py#L265))
-9. Dictionaries ([script](reference.py#L333))
-10. Sets ([script](reference.py#L397))
-11. Defining Functions ([script](reference.py#L434))
-12. Anonymous (Lambda) Functions ([script](reference.py#L498))
-13. For Loops and While Loops ([script](reference.py#L519))
-14. Comprehensions ([script](reference.py#L563))
-15. Map and Filter ([script](reference.py#L629))
-16. Collections ([script](reference.py#L649))
-17. Classes and Objects ([script](reference.py#L663))
+2. Data Types ([script](reference.py#L56))
+3. Math ([script](reference.py#L87))
+4. Comparisons and Boolean Operations ([script](reference.py#L104))
+5. Conditional Statements ([script](reference.py#L122))
+6. Lists ([script](reference.py#L150))
+7. Tuples ([script](reference.py#224))
+8. Strings ([script](reference.py#L258))
+9. Dictionaries ([script](reference.py#L325))
+10. Sets ([script](reference.py#L390))
+11. Defining Functions ([script](reference.py#L426))
+12. Anonymous (Lambda) Functions ([script](reference.py#L490))
+13. For Loops and While Loops ([script](reference.py#L510))
+14. Comprehensions ([script](reference.py#L554))
+15. Map and Filter ([script](reference.py#L619))
+16. Collections ([script](reference.py#L640))
+17. Classes and Objects ([script](reference.py#L653))
 
 ### Other Python Resources
 
