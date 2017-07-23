@@ -48,3 +48,10 @@ If you are looking for a resource that will help you to **learn Python from scra
 If there's a **topic or example** you'd like me to add to this guide, or you notice a **mistake**, please [create a GitHub issue](../../issues) or [leave a blog comment](http://www.dataschool.io/python-quick-reference/).
 
 Thank you!
+
+### Additional Credits
+
+forked from:  https://github.com/justmarkham/python-reference
+By Kevin Markham (kevin@dataschool.io)
+http://www.dataschool.io
+
