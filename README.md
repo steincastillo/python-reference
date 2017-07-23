@@ -19,9 +19,9 @@ The guide was written using Python 2 but is **fully compatible** with Python 3. 
 
 Click to jump to the relevant section of the script or the notebook:
 
-1. Imports ([script](reference.py#L33)
-2. Data Types ([script](reference.py#L57), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#2.-Data-Types))
-3. Math ([script](reference.py#L89), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#3.-Math))
+1. Imports ([script](reference.py#L33))
+2. Data Types ([script](reference.py#L57))
+3. Math ([script](reference.py#L89))
 4. Comparisons and Boolean Operations ([script](reference.py#L107), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#4.-Comparisons-and-Boolean-Operations))
 5. Conditional Statements ([script](reference.py#L126), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#5.-Conditional-Statements))
 6. Lists ([script](reference.py#L155), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#6.-Lists))
