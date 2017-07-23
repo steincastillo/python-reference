@@ -1,6 +1,6 @@
-## Python Quick Reference
+## Python Quick Reference (UPDATING... Thanks for your patience)
 
-### View as a [Python script](reference.py) or a [Jupyter notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb)
+### View as a [Python script](reference.py)
 
 This is the reference guide to Python that I **wish** had existed when I was learning the language.
 
@@ -19,7 +19,7 @@ The guide was written using Python 2 but is **fully compatible** with Python 3. 
 
 Click to jump to the relevant section of the script or the notebook:
 
-1. Imports ([script](reference.py#L33), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#1.-Imports))
+1. Imports ([script](reference.py#L33)
 2. Data Types ([script](reference.py#L57), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#2.-Data-Types))
 3. Math ([script](reference.py#L89), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#3.-Math))
 4. Comparisons and Boolean Operations ([script](reference.py#L107), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#4.-Comparisons-and-Boolean-Operations))
