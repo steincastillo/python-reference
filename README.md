@@ -22,18 +22,18 @@ Click to jump to the relevant section of the script or the notebook:
 1. Imports ([script](reference.py#L33))
 2. Data Types ([script](reference.py#L57))
 3. Math ([script](reference.py#L89))
-4. Comparisons and Boolean Operations ([script](reference.py#L107), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#4.-Comparisons-and-Boolean-Operations))
-5. Conditional Statements ([script](reference.py#L126), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#5.-Conditional-Statements))
-6. Lists ([script](reference.py#L155), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#6.-Lists))
-7. Tuples ([script](reference.py#230), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#7.-Tuples))
-8. Strings ([script](reference.py#L265), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#8.-Strings))
-9. Dictionaries ([script](reference.py#L333), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#9.-Dictionaries))
-10. Sets ([script](reference.py#L397), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#10.-Sets))
-11. Defining Functions ([script](reference.py#L434), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#11.-Defining-Functions))
-12. Anonymous (Lambda) Functions ([script](reference.py#L498), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#12.-Anonymous-%28Lambda%29-Functions))
-13. For Loops and While Loops ([script](reference.py#L519), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#13.-For-Loops-and-While-Loops))
-14. Comprehensions ([script](reference.py#L563), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#14.-Comprehensions))
-15. Map and Filter ([script](reference.py#L629), [notebook](http://nbviewer.jupyter.org/github/justmarkham/python-reference/blob/master/reference.ipynb#15.-Map-and-Filter))
+4. Comparisons and Boolean Operations ([script](reference.py#L107))
+5. Conditional Statements ([script](reference.py#L126))
+6. Lists ([script](reference.py#L155))
+7. Tuples ([script](reference.py#230))
+8. Strings ([script](reference.py#L265))
+9. Dictionaries ([script](reference.py#L333))
+10. Sets ([script](reference.py#L397))
+11. Defining Functions ([script](reference.py#L434))
+12. Anonymous (Lambda) Functions ([script](reference.py#L498))
+13. For Loops and While Loops ([script](reference.py#L519))
+14. Comprehensions ([script](reference.py#L563))
+15. Map and Filter ([script](reference.py#L629))
 16. Collections ([script](reference.py#L649))
 17. Classes and Objects ([script](reference.py#L663))
 
@@ -51,7 +51,7 @@ Thank you!
 
 ### Additional Credits
 
-forked from:  https://github.com/justmarkham/python-reference
-By Kevin Markham (kevin@dataschool.io)
-http://www.dataschool.io
+forked from:  https://github.com/justmarkham/python-reference   
+By Kevin Markham (kevin@dataschool.io)   
+http://www.dataschool.io   
 
