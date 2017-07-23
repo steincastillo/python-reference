@@ -11,10 +11,12 @@ Table of Contents:
 '''
 
 ### NUMPY ###
+# Description: Provides advance functionality to operate and manipualte arrays
+
 import numpy as np  # standard module import
 
 # Creating numpy arrays
-a = np.array([2, 3, 4])                     # Creates a single numpy array. values must be passed as a list
+a = np.array([2, 3, 4])                 # Creates a single numpy array. values must be passed as a list
 b = np.array([1.2, 3.5, 5.1])           # Creates a numpy array
 c = np.array([[1, 2, 3],  [4, 5,6]])    # Creates a 2 dimensional array
 d = np.array([1, 2, 3], dtype = 'float64') # Creates numpy array indicating the data type
@@ -22,8 +24,8 @@ d = np.array([1, 2, 3], dtype = 'float64') # Creates numpy array indicating the 
 # Other methods to create numpy arrays
 a0 = np.zeros((3,4))            # Creates an array of zeros with the specified shape
 a1 = np.ones((3,4))             # Creates an array of ones with the specified shape
-a0 = np.zeros((3,4), dtype = 'int16')          # Creates an array of zeros with the specified shape and data type
-a0 = np.zeros((3,4), dtype = np.int16)      # Creates an array of zeros with the specified shape and data type
+a0 = np.zeros((3,4), dtype = 'int16')        # Creates an array of zeros with the specified shape and data type
+a0 = np.zeros((3,4), dtype = np.int16)       # Creates an array of zeros with the specified shape and data type
 az = np.empty((3,4), dtype = np.int8)        # Creates unitialized array of specified shape and data type
 
 # Basic arrays methods
@@ -32,36 +34,38 @@ b.dtype             # returns the array type: float64
 d.dtype             # Returns float64
 a.ndim              # Returns array dimensions: 1
 c.ndim              # Retruns array dimensions: 2
-a.shape            # Returns a tuple with the array shape: (3,)
-c.shape            # Retruns a tuple with array shape: (2, 3)
+a.shape             # Returns a tuple with the array shape: (3,)
+c.shape             # Retruns a tuple with array shape: (2, 3)
 
 
 ### PANDAS ###
+# Descritpion: Used to import data and manipulate datasets
+
 import pandas as pd         # Standard module import
 
 
 # Reading datasets
 dataframe = pd.read_csv(file)                                   # Imports a CSV file as dataframe
 dataframe = pd.read_csv(file, delimiter=r"\s+")                 # Imports a <SPACE> separated file
-dataframe = pd.read_csv(file, delim_whitespace=True)     		# Imports a <SPACE> separated file
-dataframe = pd.read_csv(file, header = None)                  	# Imports a file that has no headers
-dataframe = pd.read_csv(file, na_filter = False)              	# na_filter=False converts all nam into empty strings
-dataframe.drop('feature', axis = 1)                           	# Eliminates a column 'feature' from the dataframe
-																# axis = 0 indicates a row, axis = 1 indicates a column
-dataframe = pd.read_csv(file).drop('feature', axis = 1)       	# Reads the dataframe and eliminates the column feature
+dataframe = pd.read_csv(file, delim_whitespace=True)            # Imports a <SPACE> separated file
+dataframe = pd.read_csv(file, header = None)                    # Imports a file that has no headers
+dataframe = pd.read_csv(file, na_filter = False)                # na_filter=False converts all nam into empty strings
+dataframe.drop('feature', axis = 1)                             # Eliminates a column 'feature' from the dataframe
+                                                                # axis = 0 indicates a row, axis = 1 indicates a column
+dataframe = pd.read_csv(file).drop('feature', axis = 1)         # Reads the dataframe and eliminates the column feature
 
 
 # Create an empty dataframe
 dataframe = pd.dataFrame(data = np.nan, index = [0, 1, 2, 3, 4], columns = ['A', 'B'])
 
 # Dataframe manipulation
-df1 = dataframe['feature']							# Creates a new dataframe (df1) with a copy of a feature from dataframe
-dataframe = dataframe.replace(np.NaN, 0)			# Replaces all NaN values with 0
+df1 = dataframe['feature']                          # Creates a new dataframe (df1) with a copy of a feature from dataframe
+dataframe = dataframe.replace(np.NaN, 0)            # Replaces all NaN values with 0
 
-dataframe.loc['index1']								# Returns the row/observation with label <index1>
-dataframe.iloc[line]								# Returns the row/observation of position <line>
-dataFrame.iloc[r1:r2]								# Returns the rows/observations within range <r1>:<r2>
-dataFrame.iloc[-1]									# Returns the last observation of the datafram
+dataframe.loc['index1']                             # Returns the row/observation with label <index1>
+dataframe.iloc[line]                                # Returns the row/observation of position <line>
+dataFrame.iloc[r1:r2]                               # Returns the rows/observations within range <r1>:<r2>
+dataFrame.iloc[-1]                                  # Returns the last observation of the datafram
 
 # Convert dataset into numpy array
 dataset =  dataframe.values

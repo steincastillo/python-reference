@@ -17,8 +17,9 @@ The guide was written using Python 2 but is **fully compatible** with Python 3. 
 
 ### Table of Contents
 
-Click to jump to the relevant section of the script or the notebook:
+Click to jump to the relevant section of the script:
 
+### PYTHON   
 1. Imports ([script](reference.py#L33))
 2. Data Types ([script](reference.py#L56))
 3. Math ([script](reference.py#L87))
@@ -36,6 +37,10 @@ Click to jump to the relevant section of the script or the notebook:
 15. Map and Filter ([script](reference.py#L619))
 16. Collections ([script](reference.py#L640))
 17. Classes and Objects ([script](reference.py#L653))
+
+### MODULES   
+1. NUMPY ([script](modules_reference.py#L13))
+2. PANDAS ([script](modules_reference.py#L39))
 
 ### Other Python Resources
 
