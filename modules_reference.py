@@ -28,6 +28,23 @@ a0 = np.zeros((3,4), dtype = 'int16')        # Creates an array of zeros with th
 a0 = np.zeros((3,4), dtype = np.int16)       # Creates an array of zeros with the specified shape and data type
 az = np.empty((3,4), dtype = np.int8)        # Creates unitialized array of specified shape and data type
 
+# Numpy data types
+ad = np.zeros ((3,4), dtype= np.int8)       # Byte (-128 to 127)
+ad = np.zeros ((3,4), dtype= np.int16)     # Integer (-32768 to 32767)
+ad = np.zeros ((3,4), dtype= np.int32)     # Integer ((-2147483648 to 2147483647)
+ad = np.zeros ((3,4), dtype= np.int64)     # Integer (-9223372036854775808 to 9223372036854775807)
+ad = np.zeros ((3,4), dtype= np.uint8)     # Unsigned intger (0 to 255)
+ad = np.zeros ((3,4), dtype= np.uint16)     # Unsigned intger (0 to 65535)
+ad = np.zeros ((3,4), dtype= np.uint32)     # Unsigned intger (0 to 4294967295)
+ad = np.zeros ((3,4), dtype= np.uint64)     # Unsigned intger (0 to 18446744073709551615)
+ad = np.zeros ((3,4), dtype= np.float_)       # Shorthand for float64
+ad = np.zeros ((3,4), dtype= np.float16)     # Half precision float: sign bit, 5 bits exponent, 10 bits mantissa
+ad = np.zeros ((3,4), dtype= np.float32)     # Single precision float: sign bit, 8 bits exponent, 23 bits mantissa
+ad = np.zeros ((3,4), dtype= np.float64)     # Double precision float: sign bit, 11 bits exponent, 52 bits mantissa
+ad = np.zeros ((3,4), dtype= np.complex_)   # Shorthand for complex128
+ad = np.zeros ((3,4), dtype= np.complex64) # Complex number, represented by two 32-bit floats
+ad = np.zeros ((3,4), dtype= np.complex128) # Complex number, represented by two 64-bit floats
+
 # Basic arrays methods
 a.dtype             # returns the array type: int32
 b.dtype             # returns the array type: float64
