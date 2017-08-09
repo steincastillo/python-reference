@@ -27,6 +27,11 @@ a1 = np.ones((3,4))             # Creates an array of ones with the specified sh
 a0 = np.zeros((3,4), dtype = 'int16')        # Creates an array of zeros with the specified shape and data type
 a0 = np.zeros((3,4), dtype = np.int16)       # Creates an array of zeros with the specified shape and data type
 az = np.empty((3,4), dtype = np.int8)        # Creates unitialized array of specified shape and data type
+ar = np.arange(5)                            # Creates an 1 dimension array with the values in a rage: ar = [0, 1, 2, 3, 4]
+ar = np.arange(5, dtype = np.int16)          # As above but set the data type to int16
+ar = np.random.random(4)                     # Creates a 1 dimension array of 4 random values (between 0-1)
+ar = np.random.random((3,2))                 # Creates a 2 dimension array of 3x2 random values (between 0-1)
+
 
 # Numpy data types
 ad = np.zeros ((3,4), dtype= np.int8)       # Byte (-128 to 127)
@@ -53,6 +58,10 @@ a.ndim              # Returns array dimensions: 1
 c.ndim              # Retruns array dimensions: 2
 a.shape             # Returns a tuple with the array shape: (3,)
 c.shape             # Retruns a tuple with array shape: (2, 3)
+
+# Numpy constants
+np.pi           # pi
+np.e            # e
 
 
 ### PANDAS ###
