@@ -98,3 +98,30 @@ dataset =  dataframe.values
 
 # Describe the dataset (features, count, mean, std dev, min, etc)
 dataframe.describe()
+
+# Desciptive analytics with PANDAS
+dataframe.count()           # Count the number of non-null observations
+dataframe.sum()             # Sum of values
+dataFrame.mean()            # Mean of values
+dataframe.mad()             # Mean absolute deviation
+dataframe.median()          # Arithmetic median of values
+dataframe.min()             # Minimum
+dataframe.max()             # Maximum
+dataframe.mode()            # Mode
+dataframe.abs()             # Absolute value
+dataframe.prod()            # Product of values
+dataframe.std()             # Bessel-corrected sample standard deviation
+dataframe.var()             # Unbiased variance
+dataframe.sem()             # Standard error of the mean
+dataframe.skew()            # Sample skewness (3rd moment)
+dataframe.kurt()            # Sample kurtosis (4th moment)
+dataframe.quantile()        # Sample quantile (value at %)
+dataframe.cumsum()          # Cumulative sum
+dataframe.cumprod()         # Cumulative product
+dataframe.cummax()          # Cumulative maximum
+dataframe.cummin()          # Cumulative minimum
+
+# This methods can be applied on a particular feature of the dataset
+dataFrame['feature'].count()    # Returns the count of non null-observation of 'feature'
+dataframe['feature'].mean()     # Retruns the mean of values of 'feature'
+
