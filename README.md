@@ -11,7 +11,7 @@ Here's what I want in a reference guide:
 - Presented as a **single script**, so that I can keep it open and search it when needed
 - **Code that can be run** from top to bottom, with the relevant objects defined nearby
 
-This is **not** written as a full-fledged Python tutorial, though I ordered the topics such that you can read it like a tutorial (i.e., each topic depends only on material preceding it).
+This is **not** written as a full-fledged Python tutorial, though the topics are ordered in a way that you can read it like a tutorial (i.e., each topic depends only on material preceding it).
 
 The guide was written using Python 2 but is **fully compatible** with Python 3. Relevant differences between Python 2 and 3 are noted throughout the guide.
 
