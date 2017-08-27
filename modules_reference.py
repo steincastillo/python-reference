@@ -7,6 +7,7 @@ http://www.stein-castillo.com
 
 Table of Contents:
     numpy
+    scypi
     pandas
 '''
 
@@ -62,6 +63,20 @@ c.shape             # Retruns a tuple with array shape: (2, 3)
 # Numpy constants
 np.pi           # pi
 np.e            # e
+
+
+### SCIPY ###
+
+# Using scipy pre-defined constants
+from scipy import constants     # Import constants
+scipy.constants.pi              # pi
+scipy.constants.e               # e
+scipy.constants.Avogrado        # Avogrado number
+
+# Some magnitud constants
+scipy.constants.kilo            # Kilo 1e3
+scipy.constants.mega            # Mega 1e6
+scipy.constants.nano            # Nano 1e-9
 
 
 ### PANDAS ###
