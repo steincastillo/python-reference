@@ -9,6 +9,7 @@ Table of Contents:
     Imports
     Basic Image Operations
     Image Manipulation
+'''
 
 ### IMPORTS ###
 
@@ -123,6 +124,13 @@ blurred = mahotas.gaussian_filter(image, 8) #imageö Source image
 (T, thresh) = cv2.threshold(blurred, 155, 255, cv2.THRESH_BINARY_INV)
 
 
+# Change contrast and brightness of an image
 
+result = cv.addWeighted(image, alpha, np.zeros(image.shape, image.dtype), beta, gamma)
+# result = (image * alpha) + (np.zeros * beta) + gamma
+# gamma: changes the brightness of the image
+# alpha: changes the contrast of the image
+# beta: Does nothing since it is multipied to an array of zeros
+# alpha = 0.5, beta = 120 : X-ray effect
 
 
