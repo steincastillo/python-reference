@@ -100,7 +100,7 @@ blurred = mahotas.gaussian_filter(image, 8) #imageö Source image
 
 
 
-#Thresholding an image
+# Thresholding an image
 
 """ Thresholding is the binarization of an image:
     any value over an index (C) is set to 255 (White)
@@ -110,8 +110,8 @@ blurred = mahotas.gaussian_filter(image, 8) #imageö Source image
     any value over the index (C) is the to 0 (black)
     any value under the index (C) is set to 255 (white)"""
 
-#Simple thresholding
-#requires user intervetion to provide the index (C) value
+# Simple thresholding
+# requires user intervetion to provide the index (C) value
 (T, thresh) = cv2.threshold(src, C, 255, cv2.THRESH_BINARY) #src: source image
                                                             #C: index (as explained above)
                                                             #255: max value to assign if value greater than C
@@ -119,18 +119,30 @@ blurred = mahotas.gaussian_filter(image, 8) #imageö Source image
                                                             #           cv2.THRESH_BINARY_INV
                                                             #Returns:   T: max value
                                                             #           thresh: Thresholded image
-#examples of simple thresholding
+# Examples of simple thresholding
 (T, thresh) = cv2.threshold(blurred, 155, 255, cv2.THRESH_BINARY)
 (T, thresh) = cv2.threshold(blurred, 155, 255, cv2.THRESH_BINARY_INV)
 
 
+# Resize an image
+image = cv.resize(image, None, fx = 0.5, fy = 0.5, interpolation = cv.INTER_AREA)
+"""
+fx: set the resizing factor on x axis. In this example shrinks the image 50%
+fy: set the resizing factor on y axis. In this example shrinks the image 50%
+interpolation values:
+cv.INTER_AREA : Used for image shrinking
+cv.INTER_LINEAR: Used for zooming - Also used as default for all resizing purposes
+cv.INTER_CUBIC: Also used for shrinking but is slower
+""" 
+
 # Change contrast and brightness of an image
 
 result = cv.addWeighted(image, alpha, np.zeros(image.shape, image.dtype), beta, gamma)
-# result = (image * alpha) + (np.zeros * beta) + gamma
-# gamma: changes the brightness of the image
-# alpha: changes the contrast of the image
-# beta: Does nothing since it is multipied to an array of zeros
-# alpha = 0.5, beta = 120 : X-ray effect
-
+"""
+result = (image * alpha) + (np.zeros * beta) + gamma
+gamma: changes the brightness of the image
+alpha: changes the contrast of the image
+beta: Does nothing since it is multipied to an array of zeros
+alpha = 0.5, beta = 120 : X-ray effect
+"""
 
