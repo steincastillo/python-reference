@@ -15,6 +15,7 @@ Table of Contents:
 
 #Generic imports
 import cv2
+import cv2 as cv        # I use this import to make the calls easier.
 import numpy as np 
 
 #Import matplotlib to display images

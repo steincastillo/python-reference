@@ -9,6 +9,7 @@ Table of Contents:
     numpy
     scypi
     pandas
+    sqlite
 '''
 
 ### NUMPY ###
@@ -140,3 +141,46 @@ dataframe.cummin()          # Cumulative minimum
 dataFrame['feature'].count()    # Returns the count of non null-observation of 'feature'
 dataframe['feature'].mean()     # Retruns the mean of values of 'feature'
 
+
+### SQLITE ###
+# Description: Light weight database manager
+
+# Standard import
+import sqlite3
+
+# Common sqlite statements - Cannot be directly used in python!
+
+# Data definition language (CREATE, ALTER, DROP)
+
+# Create table
+CREATE TABLE comments (
+    post_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    website TEXT NOT NULL,
+    comment TEXT NOT NULL);
+
+# Add new columns (Alter)
+ALTER TABLE comments ADD COLUMN username text;
+
+# Delete a table (Drop)
+DROP TABLE comments;
+
+# Data manipulation language (INSERT, UPDATE, DELETE)
+
+# Insert rows
+INSERT INTO comments (name, email, website, comment)
+VALUES ('test_name', 'test@email.com', 'test website', 'test comment');
+
+# Update rows
+UPDATE comments set email = 'new@mail.com' WHERE name = 'test_name';
+UPDATE comments set email = 'new@mail.com' WHERE post_id = 1;
+
+# Delete rows
+DELETE FROM comments WHERE post_id = 1;
+DELETE FROM comments WHERE name = 'test_name';
+
+# Data query language (SELECT)
+
+SELECT post_id, name, email, website, comment FROM comments;
+SELECT * FROM comments;
