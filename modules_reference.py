@@ -145,9 +145,6 @@ dataframe['feature'].mean()     # Retruns the mean of values of 'feature'
 ### SQLITE ###
 # Description: Light weight database manager
 
-# Standard import
-import sqlite3
-
 # Common sqlite statements - Cannot be directly used in python!
 
 # Data definition language (CREATE, ALTER, DROP)
@@ -184,3 +181,41 @@ DELETE FROM comments WHERE name = 'test_name';
 
 SELECT post_id, name, email, website, comment FROM comments;
 SELECT * FROM comments;
+
+# Using SQLITE in python
+
+# Standard import
+import sqlite3
+
+# Open DB connection
+conn = sqlite3.connect('mydatabase.db') # Opens the specified file
+conn = sqlite3.connect(:memory:) # Creates de database in RAM
+
+# Executing SQLITE commands
+# A cursor object needs to be created to execute the commands
+cursor = conn.cursor()
+
+# Create a table
+cursor. execute('''CREATE TABLE albums
+                (title TEXT, 
+                artist TEXT, 
+                release_date TEXT,
+                publisher TEXT,
+                media_type TEXT)''')
+
+# Insert data
+cursor.execute('''INSERT INTO albums VALUES(
+                'Glow', 
+                'Andy Hunter',
+                '7/24/12',
+                'Xplore Records',
+                'MP3')''')
+
+# Insert data using the more secure "?" method
+album = [('Exodous', 'Andy Hunter', '7/9/2002', 'Sparrow Records', 'CD')]
+
+cursor.execute('INSERT INTO albums VALUES (?, ?, ?, ?, ?)', album)
+
+
+
+
