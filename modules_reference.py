@@ -163,6 +163,25 @@ ALTER TABLE comments ADD COLUMN username text;
 # Delete a table (Drop)
 DROP TABLE comments;
 
+# Create view
+CREATE VIEW [IF NOT EXISTS] view_name (column-name-list)
+AS 
+    select-statement;
+
+CREATE VIEW IF NOT EXISTS v_coins as 
+    SELECT
+        name as country,
+        value,
+        year,
+        currency
+    FROM
+        coins;
+
+# Remove a view
+DROP VIEW [IF EXISTS] view_name;
+
+DROP VIEW v_coins;
+
 # Data manipulation language (INSERT, UPDATE, DELETE)
 
 # Insert rows
@@ -176,6 +195,17 @@ UPDATE comments set email = 'new@mail.com' WHERE post_id = 1;
 # Delete rows
 DELETE FROM comments WHERE post_id = 1;
 DELETE FROM comments WHERE name = 'test_name';
+
+# Join tables
+SELECT
+    name as country,
+    value,
+    year,
+    currency
+FROM
+    coins
+INNER JOIN country on country.iso = coins.country
+ORDER BY year;
 
 # Data query language (SELECT)
 
@@ -196,7 +226,7 @@ conn = sqlite3.connect(:memory:) # Creates de database in RAM
 cursor = conn.cursor()
 
 # Create a table
-cursor. execute('''CREATE TABLE albums
+cursor.execute('''CREATE TABLE albums
                 (title TEXT, 
                 artist TEXT, 
                 release_date TEXT,
@@ -216,6 +246,9 @@ album = [('Exodous', 'Andy Hunter', '7/9/2002', 'Sparrow Records', 'CD')]
 
 cursor.execute('INSERT INTO albums VALUES (?, ?, ?, ?, ?)', album)
 
+# Display table contents formated
+import pandas as pd
+print (pd.read_sql_query('SELECT * FROM table;', conn))
 
 
 
