@@ -112,6 +112,9 @@ dataFrame.iloc[-1]                                  # Returns the last observati
 # Convert dataset into numpy array
 dataset =  dataframe.values
 
+# Get quick count of rows in a DataFrame
+len(dataframe.index)
+
 # Describe the dataset (features, count, mean, std dev, min, etc)
 dataframe.describe()
 
