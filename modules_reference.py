@@ -109,6 +109,13 @@ dataframe.iloc[line]                                # Returns the row/observatio
 dataFrame.iloc[r1:r2]                               # Returns the rows/observations within range <r1>:<r2>
 dataFrame.iloc[-1]                                  # Returns the last observation of the datafram
 
+dataframe['feature'].unique()                       # Lists unique values in a dataframe column
+len(dataframe.index)                                # Quick count of rows in a dataframe
+dataframe.column_name = dataframe.column_name.astype(float) # Converts values of a column to type float
+
+# Split delimited values in Dataframe column into two new columns
+df['new_col1'], df['new_col2'] = zip(*df['original_col'].apply(lambda x: x.split(',', 1)))
+
 # Convert dataset into numpy array
 dataset =  dataframe.values
 
