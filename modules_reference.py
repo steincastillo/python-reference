@@ -259,6 +259,8 @@ cursor.execute('INSERT INTO albums VALUES (?, ?, ?, ?, ?)', album)
 # Display table contents formated
 import pandas as pd
 print (pd.read_sql_query('SELECT * FROM table;', conn))
+# Load DB into a dataframe
+df = pd.read_sql_query('SELECT * FROM table', conn)
 
 
 
