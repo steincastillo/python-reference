@@ -39,8 +39,10 @@ Click to jump to the relevant section of the script:
 17. Classes and Objects ([script](reference.py#L653))
 
 ### MODULES   
-1. NUMPY ([script](modules_reference.py#L13))
-2. PANDAS ([script](modules_reference.py#L39))
+1. NUMPY ([script](modules_reference.py#L15))
+2. SCIPY ([script](modules_reference.py#L15))
+3. PANDAS ([script](modules_reference.py#L83))
+4. SQLITE ([script](modules_reference.py#L155))
 
 ### Other Python Resources
 
