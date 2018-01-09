@@ -149,7 +149,7 @@ dataframe.cummin()          # Cumulative minimum
 
 # This methods can be applied on a particular feature of the dataset
 dataFrame['feature'].count()    # Returns the count of non null-observation of 'feature'
-dataframe['feature'].mean()     # Retruns the mean of values of 'feature'
+dataframe['feature'].mean()     # Returns the mean of values of 'feature'
 
 
 ### SQLITE ###
@@ -230,6 +230,9 @@ import sqlite3
 # Open DB connection
 conn = sqlite3.connect('mydatabase.db') # Opens the specified file
 conn = sqlite3.connect(:memory:) # Creates de database in RAM
+
+# open DB connection READ ONLY
+conn = sqlite3.connect('file:mydatabase.db?mode=ro', uri=True)
 
 # Executing SQLITE commands
 # A cursor object needs to be created to execute the commands
