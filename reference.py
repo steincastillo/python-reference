@@ -23,6 +23,7 @@ Table of Contents:
     Defining Functions
     Anonymous (Lambda) Functions
     For Loops and While Loops
+    Exception handling
     Comprehensions
     Map and Filter
     Collections
@@ -154,6 +155,9 @@ if x > 0: print('positive')
 empty_list = []
 empty_list = list()
 
+# Create a list eliminating duplicated elements
+new_list = list(set(list_of_values))
+
 # create a list
 simpsons = ['homer', 'marge', 'bart']
 
@@ -220,6 +224,11 @@ num is new_num          # returns False
 num == same_num         # returns True (checks whether they have the same contents)
 num == new_num          # returns True
 
+# Build-in functions with list
+all(list_values)    # Return true if all the elements of the lists are true (or if the list is empty)
+len(list_values)    # Return the length (number of items) in the list
+sum(list_values)    # Return the sum of all the elments in the list
+
 
 ### TUPLES ###
 ## properties: ordered, iterable, immutable, can contain multiple data types
@@ -284,6 +293,9 @@ s.rjust(10, '-')        # returns '----------I like you'
 s.capitalize()      # returns 'I Like You'
 s.upper()           # returns 'I LIKE YOU'
 s.lower()           # returns 'i like you'
+s.rstrip()          # Remove trailing spaces of a string
+s.lstrip()          # Remove leading spaces of a string
+s.strip()           # Remove leading AND trailing spaces of a string
 
 # split a string into a list of substrings separated by a delimiter
 s.split(' ')        # returns ['I', 'like', 'you']
@@ -549,6 +561,25 @@ count = 0
 while count < 5:
     print('This will print 5 times')
     count += 1    # equivalent to 'count = count + 1'
+
+
+### EXCEPTION HANDLING ###
+# When an error occours, or exception as it is called, Python will normally stop the execution
+# and generate and error message.
+# These exceptions can be handled using the try statement:
+try:
+    print(x)
+except:
+    print('An exception has ocourred')
+
+# else can be used to define a block of code to be executed if no errors were raised:
+try:
+    print('Hello')
+except:
+    print ('Something went wrong')
+else:
+    print('Nothing went wrong')
+
 
 
 ### COMPREHENSIONS ###

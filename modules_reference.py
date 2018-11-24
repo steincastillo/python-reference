@@ -89,12 +89,18 @@ import pandas as pd         # Standard module import
 # Reading datasets
 dataframe = pd.read_csv(file)                                   # Imports a CSV file as dataframe
 dataframe = pd.read_csv(file, delimiter=r"\s+")                 # Imports a <SPACE> separated file
+dataframe = pd.read_csv(file, delimiter='|')                    # Imports a | separated file. 
 dataframe = pd.read_csv(file, delim_whitespace=True)            # Imports a <SPACE> separated file
 dataframe = pd.read_csv(file, header = None)                    # Imports a file that has no headers
 dataframe = pd.read_csv(file, na_filter = False)                # na_filter=False converts all nam into empty strings
+dataframe = pd.read_csv(file, encoding = 'utf-8')               # imports a CSV file setting the encoding to utf-8. 
+                                                                # other encoding options: utf-16, latin
+
 dataframe.drop('feature', axis = 1)                             # Eliminates a column 'feature' from the dataframe
                                                                 # axis = 0 indicates a row, axis = 1 indicates a column
+                                                                
 dataframe = pd.read_csv(file).drop('feature', axis = 1)         # Reads the dataframe and eliminates the column feature
+dataframe = pd.DataFrame(list)                                  # Convert an existing dictionary into a dataframe
 
 
 # Create an empty dataframe
