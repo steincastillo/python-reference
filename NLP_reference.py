@@ -1,17 +1,20 @@
 '''
 Python Natural Language Processing Quick Reference
 
+https://github.com/steincastillo/python-reference.git
 Edited by: Stein Castillo
 http://www.stein-castillo.com
 
 Table of Contents:
     Library imports
     Book corpora
+    NLTK Functions
     Tokenization
     Stemming
     Lemmatization
     Name entity recognition
     Frequency distribution
+    Sentiment analysis
 '''
 
 
@@ -37,11 +40,17 @@ text8: Personals Corpus
 text9: The Man Who Was Thursday by G . K . Chesterton 1908
 '''
 
+
+# NLTK Functions
 text1.concordance('monstrous')      # Returns the instances where the word monstrous appears
+text1.similar(<word>)               # Identifies contextually similar words
+text1.dispersion_plot(['word1', 'word2', 'word3'])  # Creates a dispersion plot of the words list
 text5.count('lol')                  # Returns the number of times that word 'lol' apperas in text5
 len(text3)                          # Retunrs the number of words in text3
 len(set(text3))                     # Returns the number of unique types (tokens) in text3 - includes punctuation symbols
 len(set(text3)) / len(text3)        # Calculates the lexical richness of the text
+
+text4.index('awaken')               # Returns the index where the word first occurs
 
 
 
@@ -102,3 +111,19 @@ ex = set(text1)
 big_words = [w for w in ex if len(w)>15]
 sorted(big_words)
 
+
+### Sentiment analysis ###
+
+# NLTK
+from nltk.sentiment.vader import SentimentIntensityAnalyzer     # Import the sentiment analyzer
+
+sid = SentimentIntensityAnalyzer()      # Initializes the sentiment analyzer
+
+ss = sid.polarity_scores(sentnce)      # Analizes the sentiment of the sentence
+
+# ss is a dictionary with the sentiment analysis results:
+# ss['neg', 'neu', 'pos', 'compound']
+# ['compound'] returns the sentiment analisys. (-1 >= x <= 1)
+# x = 0: Neutral, x > 0: Pos, x<0: Neg
+
+print (ss['compound'])      # Returns the compund sentiment analysis
