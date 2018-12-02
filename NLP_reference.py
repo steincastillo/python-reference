@@ -14,6 +14,7 @@ Table of Contents:
     Lemmatization
     Name entity recognition
     Frequency distribution
+    Latent semantic analysis
     Sentiment analysis
 '''
 
@@ -39,6 +40,17 @@ text7: Wall Street Journal
 text8: Personals Corpus
 text9: The Man Who Was Thursday by G . K . Chesterton 1908
 '''
+
+nltk.corpus.gutenberg.fileids()     # Returns available texts from gutember project include in ntlk corpus
+nltk.corpus.webtext.fileids()       # Returns firefox discussion forum and pirates of the caribbean script
+nltk.corpus.nps_chat.fileids()      # Returns over 10,000 anonymized posts
+ntlk.corpus.brown.fileids()         # Returns brown corpus. first 1 mio word electronic corpus created in 1961
+
+from ntlk.corpus import gutenberg   # Alternative import statement
+gutenberg.fileids()                 # Returns available texts from gutember project include in ntlk corpus
+
+bible = gutenberg.words('bible-kjv.txt')    # Returns the words of the selected text
+bible_sentences = gutenberg.sents('bible-kjv.txt')  # Returns the sentences of the selected txt
 
 
 # NLTK Functions
@@ -110,6 +122,31 @@ fdist['whale']                  # Returns the number of occurrences of the word 
 ex = set(text1)
 big_words = [w for w in ex if len(w)>15]
 sorted(big_words)
+
+### Latent semantic analysis ###
+
+# Case study, using Bible-kjv.txt from Gutemberg corpus
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+# Instanciate the vectorizer
+tfidf = TfidfVectorizer()
+
+# Model fitting method 1
+tfidf.fit([gutenberg.raw(file_id) for file_id in gutenberg.fileids()])
+
+# Model fitting method 2
+tfidf.fit([gutenberg.raw('bible-kjv.txt')])
+
+# Transform the model
+X = tfidf.transform([gutenberg.raw('bible-kjv.txt')])
+
+# Evaluate the model
+# The higher the weight indicates a rarer or more important word
+print ([X[0, tfidf.vocabulary_['lord']]])   # Returns  0.09
+print ([X[0, tfidf.vocabulary_['god']]])    # Returns  0.04
+print ([X[0, tfidf.vocabulary_['sword']]])  # Returns  0.005
+
+
 
 
 ### Sentiment analysis ###

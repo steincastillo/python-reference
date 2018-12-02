@@ -10,6 +10,7 @@ Table of Contents:
     scypi
     pandas
     sqlite
+    io
 '''
 
 ### NUMPY ###
@@ -272,4 +273,10 @@ print (pd.read_sql_query('SELECT * FROM table;', conn))
 df = pd.read_sql_query('SELECT * FROM table', conn)
 
 
+### io ###
+import io
 
+# Read a text file with specific encoding
+with io.open(filename, 'r', encoding='utf-8') as f:
+    text = f.read()
+f.close()
