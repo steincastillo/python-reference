@@ -44,6 +44,17 @@ Click to jump to the relevant section of the script:
 3. PANDAS ([script](modules_reference.py#L83))
 4. SQLITE ([script](modules_reference.py#L155))
 
+### Natural Language Processing (NLP)
+1. Library imports
+2. Book corpora
+3. NLTK functions
+4. Tokenization
+5. Stemming
+6. Kemmatization
+7. Frequency distribution
+8. Latent semantic analysis (LSA)
+9. Sentiment analysis
+
 ### Other Python Resources
 
 If you like the general format of this guide, but need **more explanation of each topic**, I highly recommend reading the Appendix of [Python for Data Analysis](http://shop.oreilly.com/product/0636920023784.do). It presents the essentials of the Python language in a clear and focused manner.
