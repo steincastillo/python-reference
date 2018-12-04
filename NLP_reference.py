@@ -8,14 +8,20 @@ http://www.stein-castillo.com
 Table of Contents:
     Library imports
     Book corpora
+    Wordnet
     NLTK Functions
     Tokenization
     Stemming
     Lemmatization
-    Name entity recognition
     Frequency distribution
-    Latent semantic analysis
+    Latent semantic analysis (LSA)
     Sentiment analysis
+
+Natural Language ToolKit (NLTK) is a comprehensive Python library for natural language
+processing and text analytics. Originally designed for teaching, it has been adopted in the
+industry for research and development due to its usefulness and breadth of coverage. NLTK
+is often used for rapid prototyping of text processing programs and can even be used in
+production applications
 '''
 
 
@@ -28,6 +34,11 @@ from nltk.tokenize import word_tokenize     # Word tokenizer
 
 
 ### Book corpora ###
+'''
+A corpus is just a body of text, and corpus readers are designed to make accessing a corpus
+much easier than direct file access
+'''
+
 from nltk.book import *             # Imports the texts of the library included in nltk
 '''
 text1: Moby Dick by Herman Melville 1851
@@ -49,8 +60,40 @@ ntlk.corpus.brown.fileids()         # Returns brown corpus. first 1 mio word ele
 from ntlk.corpus import gutenberg   # Alternative import statement
 gutenberg.fileids()                 # Returns available texts from gutember project include in ntlk corpus
 
-bible = gutenberg.words('bible-kjv.txt')    # Returns the words of the selected text
+bible_words = gutenberg.words(['bible-kjv.txt'])    # Returns the words of the selected text
+bible_words = gutenberg.words(['bible-kjv.txt'])[:20] # Returns the first 20 words of the selected text
 bible_sentences = gutenberg.sents('bible-kjv.txt')  # Returns the sentences of the selected txt
+brown_genres = brown.categories()                   # Returns the categories of the selecte corpus
+
+# Stopwords
+'''
+Stopwords are common words that generally do not contribute to 
+the meaning of a sentence
+'''
+from nltk.corpus import stopwords
+stopwords.fileids()                 # Returns the available languages
+english_stop = set(stopwords.words('english'))  # Creates a list with english stopwords
+spanish_stop = set(stopwords.words('spanish'))  # Creates a list with spanish stopwords
+
+# Usage example:
+words = ["Can't", 'is', 'a', 'contraction']
+[word for word in words if word not in english_stop] # Returns ["Can't", 'contraction']
+
+
+### Wordnet ###
+""" 
+Wordnet is a lexical database for the english language. It groups words into sets of 
+synonyms called synsets, provides short definitions ans usage exmaples, and records
+a number of relations among these synonym sets
+-Source: Wikipedia
+"""
+
+from nltk.corpus import wordnet as wn   # Imports the wordnet corpus
+word = 'chair'
+word_synset = wn.synset(word)       # Returns a list with the word synsets
+synset.definition()                 # Returns the synset definition
+synset.lemma_names()                # Returns sysnet lemma/synonymous words
+synset.examples()                   # Returns sysnset usage examples
 
 
 # NLTK Functions
@@ -65,7 +108,6 @@ len(set(text3)) / len(text3)        # Calculates the lexical richness of the tex
 text4.index('awaken')               # Returns the index where the word first occurs
 
 
-
 ### Tokenization ###
 """
 tokenization is the process of breaking a stream of text up into words, 
@@ -78,6 +120,29 @@ sentence_tokens = nltk.sent_tokenize(text)  # Tokenizes the SENTENCES of text. R
 len(word_tokens)        # Returns the number of words in the tokenized list of text
 len(sentence_tokens)    # Returns the number of sentences in the tokenized list of text
 word_unique = list(set(word_tokens))  # Eliminates duplicated words in the tokenized list
+
+# Word tokenization details
+# When tokenizing words, the punctiation and contraction symbols receive special treatemnt:
+nlkt.word_tokenize('Hello World.')  # Returns ['Hello', 'World', '.']
+nltk.word_tokenize("can't")         # Returns ['ca', "n't"]
+
+# Word Tokenization alternatives
+
+# PunktWordTokenizer
+# Splits on punctuation, but keeps it with the word
+from nltk.tokenize import PunktWordTokenizer        # Imports the tokenizer
+tokenizer = PunktWordTokenizer()                    # Instanciates the tokenizer
+tokenizer.tokenize("Can't is a contraction")        # Returns ['Can', "'t", 'is', 'a', 'contraction.']
+
+# WordPunctTokenizer
+from nltk.tokenize import WordPunctTokenizer
+tokenizer = WordPunctTokenizer()
+tokenize.tokenizer("Can't is a contraction")        # Returns ['Can', "'", 't', 'is', 'a', 'contraction', '.']
+
+# Tokenizing (sentences) in different languages (Spanish)
+para = "Hola amigos. Gracias por ver este video. Saludos"       # Defines the text to tokenize
+tokenizer = nltk.data.load('tokenizers/punkt/spanish.pickle')   # Loads the spanish sentence tokenizer
+print (tokenizer.tokenize(para))                                # Tokenizes the text
 
 
 ### Stemming ###
@@ -111,11 +176,17 @@ Tally of number of times each unique word is used in a text
 '''
 
 fdist = FreqDist(text1)         # Calculates the frequency distribution of text1 (Moby Dick by Herman Melville 1851)
+                                # Returns a mapword and respective frequency in the input word list
 len(fdist)                      # Returns the number of unique types (tokens) in text1 - includes punctuation symbols
+fdist.max()                     # Returns the most common token in the word list
+fdist.N()                       # Returns the number of tokens in the word list 
 fdist.most_common(50)           # Returns the 50 most common words of text1
 fdist.plot(50, cumulative=True) # Returns the cumulative frequency plot. Helps determine the total number of filler words
 fdist.hapaxes()                 # Retunrs the hapaxes (words with one occurrence only)
 fdist['whale']                  # Returns the number of occurrences of the word 'whale'
+fdist['what']                   # Returns the number of occurrences of the word 'what'
+fdist[fdist.max()]              # Returns the number of ocurrences of the most common token
+                                # This method can be uses with a pre-polulated ontology list
 
 
 # Searching for long unique words:
@@ -147,9 +218,7 @@ print ([X[0, tfidf.vocabulary_['god']]])    # Returns  0.04
 print ([X[0, tfidf.vocabulary_['sword']]])  # Returns  0.005
 
 
-
-
-### Sentiment analysis ###
+### Sentiment analysis (LSA) ###
 
 # NLTK
 from nltk.sentiment.vader import SentimentIntensityAnalyzer     # Import the sentiment analyzer
