@@ -20,29 +20,29 @@ The guide was written using Python 3.
 Click to jump to the relevant section of the script:
 
 ### PYTHON   
-1. Imports ([script](reference.py#L33))
-2. Data Types ([script](reference.py#L56))
-3. Math ([script](reference.py#L87))
-4. Comparisons and Boolean Operations ([script](reference.py#L104))
-5. Conditional Statements ([script](reference.py#L122))
-6. Lists ([script](reference.py#L150))
-7. Tuples ([script](reference.py#224))
-8. Strings ([script](reference.py#L258))
-9. Dictionaries ([script](reference.py#L325))
-10. Sets ([script](reference.py#L390))
-11. Defining Functions ([script](reference.py#L426))
-12. Anonymous (Lambda) Functions ([script](reference.py#L490))
-13. For Loops and While Loops ([script](reference.py#L510))
-14. Comprehensions ([script](reference.py#L554))
-15. Map and Filter ([script](reference.py#L619))
-16. Collections ([script](reference.py#L640))
-17. Classes and Objects ([script](reference.py#L653))
+1. Imports 
+2. Data Types 
+3. Math 
+4. Comparisons and Boolean Operations 
+5. Conditional Statements 
+6. Lists 
+7. Tuples 
+8. Strings 
+9. Dictionaries 
+10. Sets 
+11. Defining Functions 
+12. Anonymous (Lambda) Functions 
+13. For Loops and While Loops 
+14. Comprehensions 
+15. Map and Filter 
+16. Collections 
+17. Classes and Objects 
 
 ### MODULES   
-1. NUMPY ([script](modules_reference.py#L15))
-2. SCIPY ([script](modules_reference.py#L15))
-3. PANDAS ([script](modules_reference.py#L83))
-4. SQLITE ([script](modules_reference.py#L155))
+1. NUMPY 
+2. SCIPY 
+3. PANDAS 
+4. SQLITE 
 
 ### Natural Language Processing (NLP)
 1. Library imports
