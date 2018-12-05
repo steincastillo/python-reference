@@ -13,7 +13,7 @@ Here's what I want in a reference guide:
 
 This is **not** written as a full-fledged Python tutorial, though the topics are ordered in a way that you can read it like a tutorial (i.e., each topic depends only on material preceding it).
 
-The guide was written using Python 2 but is **fully compatible** with Python 3. Relevant differences between Python 2 and 3 are noted throughout the guide.
+The guide was written using Python 3.
 
 ### Table of Contents
 
@@ -47,13 +47,14 @@ Click to jump to the relevant section of the script:
 ### Natural Language Processing (NLP)
 1. Library imports
 2. Book corpora
-3. NLTK functions
-4. Tokenization
-5. Stemming
-6. Kemmatization
-7. Frequency distribution
-8. Latent semantic analysis (LSA)
-9. Sentiment analysis
+3. Wordnet
+4. NLTK functions
+5. Tokenization
+6. Stemming
+7. Lemmatization
+8. Frequency distribution
+9. Latent semantic analysis (LSA)
+10. Sentiment analysis
 
 ### Other Python Resources
 
