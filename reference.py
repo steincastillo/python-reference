@@ -278,7 +278,9 @@ len(s)              # returns 10
 # string slicing is like list slicing
 s[:6]               # returns 'I like'
 s[7:]               # returns 'you'
+s[2:6]              # returns 'like'
 s[-1]               # returns 'u'
+s[-3]               # returns 'y'
 
 # basic string methods (does not modify the original string)
 s.lower()           # returns 'i like you'
@@ -314,10 +316,22 @@ s3 = 'The meaning of life is'
 s4 = '42'
 s3 + ' ' + s4       # returns 'The meaning of life is 42'
 
+# Multiply strings
+star = '*'
+start * 10  # Returns '**********'
+
 # remove whitespace from start and end of a string
 s5 = '  ham and cheese  '
 s5.strip()          # returns 'ham and cheese'
-s5. strip('ands')
+s5.strip('and')
+
+# String conditional statement
+if 'meaning' in s3:                 # Checks if the substring is containd in the string
+    print ('found meaning')
+
+# String loop
+for s in s3:                    # Iterates the string and prints each character
+    print(s)
 
 # string substitutions: all of these return 'raining cats and dogs'
 'raining %s and %s' % ('cats', 'dogs')                       # old way
