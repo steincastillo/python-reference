@@ -79,6 +79,9 @@ spanish_stop = set(stopwords.words('spanish'))  # Creates a list with spanish st
 words = ["Can't", 'is', 'a', 'contraction']
 [word for word in words if word not in english_stop] # Returns ["Can't", 'contraction']
 
+# Strippint stop words from text
+clean_text = [word for word in word_text if word not in english_stop]
+
 
 ### Wordnet ###
 """ 
@@ -144,6 +147,36 @@ para = "Hola amigos. Gracias por ver este video. Saludos"       # Defines the te
 tokenizer = nltk.data.load('tokenizers/punkt/spanish.pickle')   # Loads the spanish sentence tokenizer
 print (tokenizer.tokenize(para))                                # Tokenizes the text
 
+# Tokenize based on lines, spaces or tweets (special class)
+from nltk.tokenize import LineTokenizer, SpaceTokenizer, TweetTokenizer
+from nltk import word_tokenize
+
+# Line tokenizer
+longSentence = 'My name is Maximus Decimus Meridius, Commander of the Armies '\
+'of the North, General of the Felix Legions, loyal servant to '\
+'the true emperor, Marcus Aurelius. Father to a murdered son, '\
+'husband to a murdered wife. And I will have my vengeance, in '\
+'this life or the next.'
+
+lTokenizer = LineTokenizer()
+sentenceTokens = lTokenizer.tokenize(longSentence)
+print (sentenceTokens)
+
+# Space tokenizer
+sTokenizer = SpaceTokenizer()
+spaceTokens = sTokenizer.tokenize(longSentence)
+print (spaceTokens)
+
+# Tweet tokenizer
+tweet = 'This is a coool #dummysmiley: :-) :) :-P <3'
+tTokenizer = TweetTokenizer()
+tTokens = tTokenizer.tokenize(tweet)
+print ('Tweet tokenizer outpur:')
+print (tTokens)
+
+# Word tokenizer
+wTokenizer = word_tokenize(longSentence)
+print (wTokenizer)
 
 ### Stemming ###
 """
