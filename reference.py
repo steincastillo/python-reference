@@ -271,6 +271,11 @@ bart = ('male', 10, 'simpson')  # create a tuple
 s = str(42)         # convert another data type into a string
 s = 'I like you'
 
+# Declaring a long string
+longstring = 'foooo'\
+'this is a long string'\
+'really long'
+
 # examine a string
 s[0]                # returns 'I'
 len(s)              # returns 10
