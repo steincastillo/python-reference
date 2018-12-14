@@ -67,8 +67,8 @@ brown_genres = brown.categories()                   # Returns the categories of 
 
 # Stopwords
 '''
-Stopwords are common words that generally do not contribute to 
-the meaning of a sentence
+Stopwords are common words that carry limited semantic value and generally do not 
+contribute to the meaning of a sentence
 '''
 from nltk.corpus import stopwords
 stopwords.fileids()                 # Returns the available languages
@@ -79,7 +79,7 @@ spanish_stop = set(stopwords.words('spanish'))  # Creates a list with spanish st
 words = ["Can't", 'is', 'a', 'contraction']
 [word for word in words if word not in english_stop] # Returns ["Can't", 'contraction']
 
-# Strippint stop words from text
+# Stripping stop words from text
 clean_text = [word for word in word_text if word not in english_stop]
 
 
