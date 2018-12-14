@@ -289,6 +289,7 @@ s[-3]               # returns 'y'
 
 # basic string methods (does not modify the original string)
 s.lower()           # returns 'i like you'
+s.casefold()        # returns 'i like you'
 s.upper()           # returns 'I LIKE YOU'
 s.startswith('I')   # returns True
 s.endswith('you')   # returns True
