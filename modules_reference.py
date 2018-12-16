@@ -169,6 +169,12 @@ Regular expression wildcards symbols:
 * : Zero or more
 ? : Zero or one
 + : one or more
+. : Matches any character except new line
+^ : Begins with
+$ : Ends with
+\w: Matches word characters
+\S: Matches any non-whitespace character
+\B: Matches the string withing the \B \B boundary
 '''
 
 # Search patterns
@@ -197,6 +203,27 @@ re.search('ab+', 'abbc')    # Returns True. Means 'a' followed by one or more 'b
 re.search('ab{2}', 'ac')    # Returns False. ab{2} means 'a' followed exactly by 2 'b'
 re.search('ab{2}', 'abc')   # Returns False. ab{2} means 'a' followed exactly by 2 'b'
 re.search('ab{2}', 'abbc')  # Returns True. ab{2} means 'a' followed exactly by 2 'b'
+
+# Pattern at start and end
+# ^a means starts with 'a'
+# .* means zero or more occurrences of any character
+# c$ means end with 'c'
+# ^a.*c$ means start with 'a' followed by zero or more characters and end with 'c'
+
+re.search('^a.*c$', 'abbc') # Returns true
+
+# Pattern to test the beginning of a word
+# ^\w+ means starts with any alphanumeric character and one or more occurrences of it
+re.search('^\w+', 'abbc')   # Returns True
+
+# Pattern to test the end of a word
+# \w+\S*?$ means any alphanumeric character with non-whitespace at the end
+re.search('\w+\S*?$', 'Loli eats peas') # Returns True
+
+# Pattern to find a word that contains a specific character
+# \Bu\B matches the 'u' character withing the \B \B boundary
+print (text_match('Tuffy eats pie, Loli eats peas!', '\Bu\B'))  # Returns True
+
 
 
 ### SQLITE ###
