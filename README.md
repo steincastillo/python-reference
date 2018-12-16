@@ -42,7 +42,8 @@ Click to jump to the relevant section of the script:
 1. NUMPY 
 2. SCIPY 
 3. PANDAS 
-4. SQLITE 
+4. RE (Regular Expressions)
+5. SQLITE 
 
 ### Natural Language Processing (NLP)
 1. Library imports
