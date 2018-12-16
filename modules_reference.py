@@ -9,6 +9,7 @@ Table of Contents:
     numpy
     scypi
     pandas
+    regular expressions
     sqlite
     io
 '''
@@ -157,6 +158,45 @@ dataframe.cummin()          # Cumulative minimum
 # This methods can be applied on a particular feature of the dataset
 dataFrame['feature'].count()    # Returns the count of non null-observation of 'feature'
 dataframe['feature'].mean()     # Returns the mean of values of 'feature'
+
+
+### Regular Expressions ###
+
+import re       # import the regular expressions module
+
+'''
+Regular expression wildcards symbols:
+* : Zero or more
+? : Zero or one
++ : one or more
+'''
+
+# Search patterns
+re.search(patterns, text)   # Searchs for a pattern in a text. returs True or False
+
+# zero or one pattern
+# ab? menas 'a' followed by zero or one 'b'
+re.search('ab?', 'ac')      # Returns True. Means 'a' followed by zero or one 'b'
+re.search('ab?', 'abc')     # Returns True. Means 'a' followed by zero or one 'b'
+re.search('ab?', 'abbc')    # Returns True. Means 'a' followed by zero or one 'b'
+
+# Zero or more pattern
+# ab* means 'a' followed by zero or more 'b'
+re.search('ab*', 'ac')      # Returns True. Means 'a' followed by zero or more 'b'
+re.search('ab*', 'abc')     # Returns True. Means 'a' followed by zero or more 'b'
+re.search('ab*', 'abbc')    # Returns True. Means 'a' followed by zero or more 'b'
+
+# one or more pattern
+# ab+ menas 'a' followed by one or more 'b'
+re.search('ab+', 'ac')      # Returns False. Means 'a' followed by one or more 'b'
+re.search('ab+', 'abc')     # Returns True. Means 'a' followed by one or more 'b'
+re.search('ab+', 'abbc')    # Returns True. Means 'a' followed by one or more 'b'
+
+# Exact pattern
+# ab{2} means 'a' followed exactly by 2 'b'
+re.search('ab{2}', 'ac')    # Returns False. ab{2} means 'a' followed exactly by 2 'b'
+re.search('ab{2}', 'abc')   # Returns False. ab{2} means 'a' followed exactly by 2 'b'
+re.search('ab{2}', 'abbc')  # Returns True. ab{2} means 'a' followed exactly by 2 'b'
 
 
 ### SQLITE ###
