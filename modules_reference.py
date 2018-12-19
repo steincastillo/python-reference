@@ -224,7 +224,19 @@ re.search('\w+\S*?$', 'Loli eats peas') # Returns True
 # \Bu\B matches the 'u' character withing the \B \B boundary
 print (text_match('Tuffy eats pie, Loli eats peas!', '\Bu\B'))  # Returns True
 
+# Search for a pattern and its location
+text = 'Diwali is a festival of lights, holi is a festival of colors!'
+pattern = 'festival'
 
+for match in re.finditer(pattern, text):
+    s = match.start()
+    e = match.end()
+    print ('Found {} at {}:{}'.format(text[s:e], s, e))
+
+
+# Substitutions
+street = '21 Ramakrishna Road'
+print (re.sub('Road', 'Rd', street)) # Returns 21 Ramakrishna Rd
 
 ### SQLITE ###
 # Description: Light weight database manager
