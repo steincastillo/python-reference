@@ -14,6 +14,7 @@ Table of Contents:
     Stemming
     Lemmatization
     Frequency distribution
+    POS Tagging (part of speech)
     Latent semantic analysis (LSA)
     Sentiment analysis
 
@@ -202,6 +203,47 @@ wnl = nltk.WordNetLemmatizer()      # Initializes the Word Net lemmatizer
 
 [wnl.lemmatize(t) for t in word_tokens] # Lemmatizes (Word Net) the tokens in the word_tokens list
 
+
+### POS tagging ###
+'''
+The process of classifying words into their parts of speech and labeling them accordingly 
+is known as part-of-speech tagging, POS-tagging, or simply tagging. Parts of speech are also 
+known as word classes or lexical categories. The collection of tags used for a particular 
+task is known as a tagset.
+
+Universal part of speech tagset
+ADJ     Adjective               new, good, high, special, big, local
+ADP     Adpoisition             on, of, at, with, by, into, under
+ADV     Adverb                  really, already, still, early, now
+CONJ    Conjuction              and, or, but, if, while, although
+DET     Determiner, article     the, a, some, most, every, no, which
+NOUN    NOUN                    year, home, cost, time, Africa
+NUM     Numeral                 twenty-four, fourth, 1191, 14:24
+PRT     Particle                at, on, out, over, per, that, up, with
+PRON    Pronoun                 he, their, her, its, my, I, us
+VERB    VERB                    is, say, told, given, playing, would
+.       Punctuation marks       . , ; !
+X       Other                   ersatz, espirit, dunno, gr8, univeristy
+'''
+text = 'And now for something completely different'
+posTags = nltk.pos_tags(text, tagset='universal') # Returns list of tupples with
+                                                  # token (words) and tags using
+                                                  # universal tagset
+
+posTags = nltk.pos_tags(text)   # Returns a list of tuples with the token (word) and tag
+
+# Getting help to describe the tagset
+nltk.help.upenn_tagset('RB')    # Returns help on the RB tag
+nltk.help.upenn_tagset('NN.*')  # Returns help on any tag starting with NN
+
+### Chuncking ###
+'''
+Chunking segments and labels multi-token sequences
+'''
+words = ntlk.word_tokenize(sentence)
+tags = ntlk.pos_tag(words)
+chunks = ntlk.ne_chunk(tags)
+print (chunks)
 
 ### Frequency distribution ###
 '''
