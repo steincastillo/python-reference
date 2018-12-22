@@ -53,9 +53,11 @@ Click to jump to the relevant section of the script:
 5. Tokenization
 6. Stemming
 7. Lemmatization
-8. Frequency distribution
-9. Latent semantic analysis (LSA)
-10. Sentiment analysis
+8. POS taggin
+9. Chunking
+10. Frequency distribution1
+11. Latent semantic analysis (LSA)
+12. Sentiment analysis
 
 ### Other Python Resources
 
