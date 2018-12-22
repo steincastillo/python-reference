@@ -15,6 +15,7 @@ Table of Contents:
     Lemmatization
     Frequency distribution
     POS Tagging (part of speech)
+    Chunker
     Latent semantic analysis (LSA)
     Sentiment analysis
 
@@ -236,7 +237,7 @@ posTags = nltk.pos_tags(text)   # Returns a list of tuples with the token (word)
 nltk.help.upenn_tagset('RB')    # Returns help on the RB tag
 nltk.help.upenn_tagset('NN.*')  # Returns help on any tag starting with NN
 
-### Chuncking ###
+### Chunking ###
 '''
 Chunking segments and labels multi-token sequences
 '''
