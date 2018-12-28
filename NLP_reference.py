@@ -8,6 +8,7 @@ http://www.stein-castillo.com
 Table of Contents:
     Library imports
     Book corpora
+    Stop words
     Wordnet
     NLTK Functions
     Tokenization
@@ -26,16 +27,18 @@ is often used for rapid prototyping of text processing programs and can even be 
 production applications
 '''
 
-
+#######################
 ### Library imports ###
+#######################
 import nltk                         # Base import
 from nltk.sentiment.vader import SentimentIntensityAnalyzer     # Sentiment analyzer
 from nltk.tokenize import sent_tokenize     # Sentence tokenizer
 from nltk.tokenize import word_tokenize     # Word tokenizer
 
 
-
+####################
 ### Book corpora ###
+####################
 '''
 A corpus is just a body of text, and corpus readers are designed to make accessing a corpus
 much easier than direct file access
@@ -67,7 +70,9 @@ bible_words = gutenberg.words(['bible-kjv.txt'])[:20] # Returns the first 20 wor
 bible_sentences = gutenberg.sents('bible-kjv.txt')  # Returns the sentences of the selected txt
 brown_genres = brown.categories()                   # Returns the categories of the selecte corpus
 
-# Stopwords
+#############
+# Stopwords #
+#############
 '''
 Stopwords are common words that carry limited semantic value and generally do not 
 contribute to the meaning of a sentence
@@ -84,8 +89,9 @@ words = ["Can't", 'is', 'a', 'contraction']
 # Stripping stop words from text
 clean_text = [word for word in word_text if word not in english_stop]
 
-
+###############
 ### Wordnet ###
+###############
 """ 
 Wordnet is a lexical database for the english language. It groups words into sets of 
 synonyms called synsets, provides short definitions ans usage exmaples, and records
@@ -112,8 +118,9 @@ len(set(text3)) / len(text3)        # Calculates the lexical richness of the tex
 
 text4.index('awaken')               # Returns the index where the word first occurs
 
-
+####################
 ### Tokenization ###
+####################
 """
 tokenization is the process of breaking a stream of text up into words, 
 phrases, symbols, or other meaningful elements called tokens. 
@@ -180,7 +187,9 @@ print (tTokens)
 wTokenizer = word_tokenize(longSentence)
 print (wTokenizer)
 
+################
 ### Stemming ###
+################
 """
 stemming is the process of reducing inflected (or sometimes derived) words to 
 their word stem, base or root form
@@ -192,8 +201,9 @@ lancaster = nltk.LancasterStemmer() # Initializes the Lancaster stemmer
 [porter.stem(t) for t in word_tokens]       # Stems (porter) the tokens in the word_tokens list 
 [lancaster.stem(t) for t in word_tokens]    # Stems (lancaster) the tokens in the word_tokens list
 
-
+#####################
 ### Lemmatization ###
+#####################
 """
 Lemmatisation is the algorithmic process of determining the lemma of a word based on its intended meaning.
 Unlike stemming, lemmatisation depends on correctly identifying the intended part of speech and meaning of a word in a sentence, 
@@ -204,8 +214,9 @@ wnl = nltk.WordNetLemmatizer()      # Initializes the Word Net lemmatizer
 
 [wnl.lemmatize(t) for t in word_tokens] # Lemmatizes (Word Net) the tokens in the word_tokens list
 
-
+###################
 ### POS tagging ###
+###################
 '''
 The process of classifying words into their parts of speech and labeling them accordingly 
 is known as part-of-speech tagging, POS-tagging, or simply tagging. Parts of speech are also 
@@ -237,7 +248,9 @@ posTags = nltk.pos_tags(text)   # Returns a list of tuples with the token (word)
 nltk.help.upenn_tagset('RB')    # Returns help on the RB tag
 nltk.help.upenn_tagset('NN.*')  # Returns help on any tag starting with NN
 
+################
 ### Chunking ###
+################
 '''
 Chunking segments and labels multi-token sequences
 '''
@@ -294,7 +307,9 @@ print ([X[0, tfidf.vocabulary_['god']]])    # Returns  0.04
 print ([X[0, tfidf.vocabulary_['sword']]])  # Returns  0.005
 
 
+################################
 ### Sentiment analysis (LSA) ###
+################################
 
 # NLTK
 from nltk.sentiment.vader import SentimentIntensityAnalyzer     # Import the sentiment analyzer
