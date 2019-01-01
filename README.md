@@ -1,7 +1,5 @@
 ## Python Quick Reference (UPDATING... Thanks for your patience)
 
-### View as a [Python script](reference.py)
-
 This is the reference guide to Python that I **wish** had existed when I was learning the language.
 
 Here's what I want in a reference guide:
@@ -17,9 +15,7 @@ The guide was written using Python 3.
 
 ### Table of Contents
 
-Click to jump to the relevant section of the script:
-
-### PYTHON   
+### PYTHON [Python script](reference.py)
 1. Imports 
 2. Data Types 
 3. Math 
@@ -38,14 +34,14 @@ Click to jump to the relevant section of the script:
 16. Collections 
 17. Classes and Objects 
 
-### MODULES   
+### MODULES [Modules script](modules_reference.py)
 1. NUMPY 
 2. SCIPY 
 3. PANDAS 
 4. RE (Regular Expressions)
 5. SQLITE 
 
-### Natural Language Processing (NLP)
+### Natural Language Processing (NLP) [NLP script](NLP_reference.py)
 1. Library imports
 2. Book corpora
 3. Wordnet
@@ -67,7 +63,7 @@ If you are looking for a resource that will help you to **learn Python from scra
 
 ### Suggestions or Corrections
 
-If there's a **topic or example** you'd like me to add to this guide, or you notice a **mistake**, please [create a GitHub issue](../../issues) or [leave a blog comment](http://www.dataschool.io/python-quick-reference/).
+If there's a **topic or example** you'd like me to add to this guide, or you notice a **mistake**, please [create a GitHub issue](../../issues).
 
 Thank you!
 
