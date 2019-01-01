@@ -30,8 +30,9 @@ Table of Contents:
     Classes and objects
 '''
 
-
+###############
 ### IMPORTS ###
+###############
 
 # 'generic import' of math module
 import math
@@ -53,8 +54,9 @@ import datetime as dt
 # show all functions in math module
 dir(math)
 
-
+##################
 ### DATA TYPES ###
+##################
 
 # determine the type of an object
 type(2)         # returns 'int'
@@ -84,8 +86,9 @@ bool(2)
 bool('two')
 bool([2])
 
-
+############
 ### MATH ###
+############
 
 # basic operations
 10 + 4          # add (returns 14)
@@ -101,8 +104,9 @@ from __future__ import division
 10 / 4          # true division (returns 2.5)
 10 // 4         # floor division (returns 2)
 
-
+##########################################
 ### COMPARISONS AND BOOLEAN OPERATIONS ###
+##########################################
 
 # assignment statement
 x = 5
@@ -119,8 +123,9 @@ x == 5
 not False
 False or not False and True     # evaluation order: not, and, or
 
-
+##############################
 ### CONDITIONAL STATEMENTS ###
+##############################
 
 # if statement
 if x > 0:
@@ -147,8 +152,10 @@ if x > 0: print('positive')
 # known as a 'ternary operator'
 'positive' if x > 0 else 'zero or negative'
 
-
+#############
 ### LISTS ###
+#############
+
 ## properties: ordered, iterable, mutable, can contain multiple data types
 
 # create an empty list (two ways)
@@ -229,8 +236,10 @@ all(list_values)    # Return true if all the elements of the lists are true (or 
 len(list_values)    # Return the length (number of items) in the list
 sum(list_values)    # Return the sum of all the elments in the list
 
-
+##############
 ### TUPLES ###
+##############
+
 ## properties: ordered, iterable, immutable, can contain multiple data types
 ## like lists, but they don't change size
 
@@ -263,8 +272,10 @@ sorted(tens)        # sorts by first element in tuple, then second element
 bart = ('male', 10, 'simpson')  # create a tuple
 (sex, age, surname) = bart      # assign three values at once
 
-
+###############
 ### STRINGS ###
+###############
+
 ## properties: iterable, immutable
 
 # create a string
@@ -353,8 +364,10 @@ for s in s3:                    # Iterates the string and prints each character
 print('first line\nsecond line')    # normal strings allow for escaped characters
 print(r'first line\nfirst line')    # raw strings treat backslashes as literal characters
 
-
+####################
 ### DICTIONARIES ###
+####################
+
 ## properties: unordered, iterable, mutable, can contain multiple data types
 ## made of key-value pairs
 ## keys must be unique, and can be strings, numbers, or tuples
@@ -418,8 +431,10 @@ w["main"]       #  returns {"temp":5.67, "humidity": 86, "pressure": 1009}
 w["main"]["temp"]               #returns 5.67
 w["main"]["pressure"]       #returns 1009
 
-
+############
 ### SETS ###
+############
+
 ## properties: unordered, iterable, mutable, can contain multiple data types
 ## made of unique elements (strings, numbers, or tuples)
 ## like dictionaries, but with keys only (no values)
@@ -454,8 +469,9 @@ languages.update(['go', 'spark'])  # add multiple elements (can also pass a set)
 # get a sorted list of unique elements from a list
 sorted(set([9, 0, 2, 1, 0]))    # returns [0, 1, 2, 9]
 
-
+##########################
 ### DEFINING FUNCTIONS ###
+##########################
 
 # define a function with no arguments and no return values
 def print_text():
@@ -471,7 +487,7 @@ def print_this(x):
 # call the function
 print_this(3)       # prints 3
 n = print_this(3)   # prints 3, but doesn't assign 3 to n
-                    #   because the function has no return statement
+                    # because the function has no return statement
 
 # define a function with one argument and one return value
 def square_this(x):
@@ -518,8 +534,10 @@ min_max_num = min_max(nums)         # min_max_num = (1, 3)
 # return values can be assigned into multiple variables using tuple unpacking
 min_num, max_num = min_max(nums)    # min_num = 1, max_num = 3
 
-
+####################################
 ### ANONYMOUS (LAMBDA) FUNCTIONS ###
+####################################
+
 ## primarily used to temporarily define a function for use by another function
 
 # define a function the "usual" way
@@ -538,8 +556,9 @@ sorted(simpsons, key=last_letter)
 # sort a list of strings by the last letter (using lambda)
 sorted(simpsons, key=lambda word: word[-1])
 
-
+#################################
 ### FOR LOOPS AND WHILE LOOPS ###
+#################################
 
 # range returns a list of integers (Python 2) or a sequence (Python 3)
 range(0, 3)     # returns [0, 1, 2]: includes start value but excludes stop value
@@ -582,8 +601,10 @@ while count < 5:
     print('This will print 5 times')
     count += 1    # equivalent to 'count = count + 1'
 
-
+##########################
 ### EXCEPTION HANDLING ###
+##########################
+
 # When an error occours, or exception as it is called, Python will normally stop the execution
 # and generate and error message.
 # These exceptions can be handled using the try statement:
@@ -601,8 +622,10 @@ else:
     print('Nothing went wrong')
 
 
-
+######################
 ### COMPREHENSIONS ###
+######################
+
 # A list comprehension is an expression and loop (with an optional condition)
 # enclosed in brackets:
 # [item for item in iterable]
@@ -666,8 +689,10 @@ unique_lengths = {len(fruit) for fruit in fruits}   # {5, 6}
 fruit_lengths = {fruit:len(fruit) for fruit in fruits}              # {'apple': 5, 'banana': 6, 'cherry': 6}
 fruit_indices = {fruit:index for index, fruit in enumerate(fruits)} # {'apple': 0, 'banana': 1, 'cherry': 2}
 
-
+######################
 ### MAP AND FILTER ###
+######################
+
 # 'map' applies a function to every element of a sequence
 # ...and returns a list (Python 2) or iterator (Python 3)
 
@@ -687,8 +712,10 @@ filter(lambda x: x % 2 == 0, nums)      # returns [0, 2, 4]
 # equivalent list comprehension
 [num for num in nums if num % 2 == 0]
 
-
+###################
 ### COLLECTIONS ###
+###################
+
 # Python's collections module implements specialized container data types
 # providing high-performance alternatives to the general purpose built-in containers.
 
@@ -700,13 +727,15 @@ seq_count = Counter(seq1)       # Counter({1: 3, 2: 3, 5: 3, 3: 1, 4: 1})
 seq_count.most_common()     #  [(1, 3), (2, 3), (5, 3), (3, 1), (4, 1)] -> returns the count of the elements in the dict
 seq_count.most_common(2)    # [(1, 3), (2, 3)] -> returns the 2 most commo elements
 
-
+#########################################################
 ### CLASSES AND OBJECTS (Object Oriented Programming) ###
+#########################################################
 
-#Class definition
+# Class definition
 class myClass(self):
 
-#Constructor definiton
+# Constructor definiton
+# This method is executed when an instance of the class is created
 class myClass(self):
     def __init__ (self, parm1, parm2):
         self.parm1 = parm1
