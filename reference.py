@@ -315,6 +315,9 @@ s.lower()           # returns 'i like you'
 s.rstrip()          # Remove trailing spaces of a string
 s.lstrip()          # Remove leading spaces of a string
 s.strip()           # Remove leading AND trailing spaces of a string
+s.encode(encoding = 'utf-8', errors='ignore') # Encodes the string using the specified encoding if not specified, utf-8
+                                              # will be used
+                                              # errors: 'backslachreplace, ignore, namreplace, strict, replace, xmlcharrefreplace'
 
 # split a string into a list of substrings separated by a delimiter
 s.split(' ')        # returns ['I', 'like', 'you']
