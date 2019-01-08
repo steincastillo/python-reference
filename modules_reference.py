@@ -103,6 +103,8 @@ dataframe.drop('feature', axis = 1)                             # Eliminates a c
                                                                 
 dataframe = pd.read_csv(file).drop('feature', axis = 1)         # Reads the dataframe and eliminates the column feature
 dataframe = pd.DataFrame(list)                                  # Convert an existing dictionary into a dataframe
+    
+dataFrame = pd.read_json(file.json)                             # Imports a JSON file as dataframe
 
 
 # Create an empty dataframe
