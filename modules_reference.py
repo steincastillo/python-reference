@@ -54,6 +54,12 @@ ad = np.zeros ((3,4), dtype= np.complex_)   # Shorthand for complex128
 ad = np.zeros ((3,4), dtype= np.complex64) # Complex number, represented by two 32-bit floats
 ad = np.zeros ((3,4), dtype= np.complex128) # Complex number, represented by two 64-bit floats
 
+
+array = np.asarray(list)                    # Convert list to array
+list = array.tolist()                       # Convert array to list
+
+array = array[::-1]                         # Reverses array
+
 # Basic arrays methods
 a.dtype             # returns the array type: int32
 b.dtype             # returns the array type: float64
@@ -67,8 +73,9 @@ c.shape             # Retruns a tuple with array shape: (2, 3)
 np.pi           # pi
 np.e            # e
 
-
+#############
 ### SCIPY ###
+#############
 
 # Using scipy pre-defined constants
 from scipy import constants     # Import constants
@@ -81,8 +88,11 @@ scipy.constants.kilo            # Kilo 1e3
 scipy.constants.mega            # Mega 1e6
 scipy.constants.nano            # Nano 1e-9
 
-
+##############
 ### PANDAS ###
+##############
+
+
 # Descritpion: Used to import data and manipulate datasets
 
 import pandas as pd         # Standard module import
@@ -123,6 +133,8 @@ dataframe['feature'].unique()                       # Lists unique values in a d
 len(dataframe.index)                                # Quick count of rows in a dataframe
 dataframe.column_name = dataframe.column_name.astype(float) # Converts values of a column to type float
 
+dataframe['feature'].tolist()                       # Converts the values of the feature to a list
+
 # Split delimited values in Dataframe column into two new columns
 df['new_col1'], df['new_col2'] = zip(*df['original_col'].apply(lambda x: x.split(',', 1)))
 
@@ -161,8 +173,9 @@ dataframe.cummin()          # Cumulative minimum
 dataFrame['feature'].count()    # Returns the count of non null-observation of 'feature'
 dataframe['feature'].mean()     # Returns the mean of values of 'feature'
 
-
+###########################
 ### Regular Expressions ###
+###########################
 
 import re       # import the regular expressions module
 
@@ -240,7 +253,12 @@ for match in re.finditer(pattern, text):
 street = '21 Ramakrishna Road'
 print (re.sub('Road', 'Rd', street)) # Returns 21 Ramakrishna Rd
 
+
+##############
 ### SQLITE ###
+##############
+
+
 # Description: Light weight database manager
 
 # Common sqlite statements - Cannot be directly used in python!
@@ -353,8 +371,10 @@ print (pd.read_sql_query('SELECT * FROM table;', conn))
 # Load DB into a dataframe
 df = pd.read_sql_query('SELECT * FROM table', conn)
 
-
+##########
 ### io ###
+##########
+
 import io
 
 # Read a text file with specific encoding
