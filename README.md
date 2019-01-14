@@ -1,4 +1,4 @@
-## Python Quick Reference (UPDATING... Thanks for your patience)
+## Python Quick Reference  
 
 This is the reference guide to Python that I **wish** had existed when I was learning the language.
 
