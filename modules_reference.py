@@ -110,6 +110,8 @@ dataframe = pd.read_csv(file, encoding = 'utf-8')               # imports a CSV 
 
 dataframe.drop('feature', axis = 1)                             # Eliminates a column 'feature' from the dataframe
                                                                 # axis = 0 indicates a row, axis = 1 indicates a column
+
+dataframe.dropna()                                              # Eliminate all NaN observations
                                                                 
 dataframe = pd.read_csv(file).drop('feature', axis = 1)         # Reads the dataframe and eliminates the column feature
 dataframe = pd.DataFrame(list)                                  # Convert an existing dictionary into a dataframe
@@ -127,7 +129,8 @@ dataframe = dataframe.replace(np.NaN, 0)            # Replaces all NaN values wi
 dataframe.loc['index1']                             # Returns the row/observation with label <index1>
 dataframe.iloc[line]                                # Returns the row/observation of position <line>
 dataFrame.iloc[r1:r2]                               # Returns the rows/observations within range <r1>:<r2>
-dataFrame.iloc[-1]                                  # Returns the last observation of the datafram
+dataFrame.iloc[-1]                                  # Returns the last observation of the dataframe
+dataframe['feature'].iloc[-1]                       # Returns the last observation of the specific feature
 
 dataframe['feature'].unique()                       # Lists unique values in a dataframe column
 len(dataframe.index)                                # Quick count of rows in a dataframe
