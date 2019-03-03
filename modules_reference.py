@@ -147,6 +147,11 @@ dataset =  dataframe.values
 # Get quick count of rows in a DataFrame
 len(dataframe.index)
 
+# iterate over the rows of a dataframe
+for index, row in dataframe.iterrows():
+    print (row)
+    print (row['index1'], row['index2'])
+
 # Describe the dataset (features, count, mean, std dev, min, etc)
 dataframe.describe()
 
