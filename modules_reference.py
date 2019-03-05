@@ -112,6 +112,7 @@ dataframe.drop('feature', axis = 1)                             # Eliminates a c
                                                                 # axis = 0 indicates a row, axis = 1 indicates a column
 
 dataframe.dropna()                                              # Eliminate all NaN observations
+dataframe.fillna(0)                                             # Replace all NaN values with 0. A different value can be specified
                                                                 
 dataframe = pd.read_csv(file).drop('feature', axis = 1)         # Reads the dataframe and eliminates the column feature
 dataframe = pd.DataFrame(list)                                  # Convert an existing dictionary into a dataframe
@@ -122,7 +123,7 @@ dataFrame = pd.read_json(file.json)                             # Imports a JSON
 # Create an empty dataframe
 dataframe = pd.dataFrame(data = np.nan, index = [0, 1, 2, 3, 4], columns = ['A', 'B'])
 
-# Dataframe manipulation
+# Dataframe slicing
 df1 = dataframe['feature']                          # Creates a new dataframe (df1) with a copy of a feature from dataframe
 dataframe = dataframe.replace(np.NaN, 0)            # Replaces all NaN values with 0
 
@@ -140,6 +141,10 @@ dataframe['feature'].tolist()                       # Converts the values of the
 
 # Split delimited values in Dataframe column into two new columns
 df['new_col1'], df['new_col2'] = zip(*df['original_col'].apply(lambda x: x.split(',', 1)))
+
+# Search values in a dataframe
+idx = dataframe.index[dataframe['feature']==value]  # Returns the index where the value is found
+value = dataframe[dataframe['feature']==value]      # Returns a dataframe with the values where the condition is true
 
 # Convert dataset into numpy array
 dataset =  dataframe.values
