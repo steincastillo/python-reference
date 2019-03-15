@@ -92,8 +92,7 @@ scipy.constants.nano            # Nano 1e-9
 ### PANDAS ###
 ##############
 
-
-# Descritpion: Used to import data and manipulate datasets
+# Description: Used to import data and manipulate dataframes
 
 import pandas as pd         # Standard module import
 
@@ -122,6 +121,12 @@ dataFrame = pd.read_json(file.json)                             # Imports a JSON
 
 # Create an empty dataframe
 dataframe = pd.dataFrame(data = np.nan, index = [0, 1, 2, 3, 4], columns = ['A', 'B'])
+
+# Insert a column in a specific location
+dataFrame.insert(loc=2, column='A', value=0)        # Inserts a column named A on the after the 2nd column with value 0
+
+# Get the index of a column
+dataFrame.columns.get_loc('column')                 # Returns the index of column
 
 # Dataframe slicing
 df1 = dataframe['feature']                          # Creates a new dataframe (df1) with a copy of a feature from dataframe
