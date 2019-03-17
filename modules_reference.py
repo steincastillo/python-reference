@@ -191,6 +191,11 @@ dataframe.cummin()          # Cumulative minimum
 dataFrame['feature'].count()    # Returns the count of non null-observation of 'feature'
 dataframe['feature'].mean()     # Returns the mean of values of 'feature'
 
+# Ploting a dataframe
+dataFrame.plot()            # Plots the content of the dataframe
+dataFrame.plot(grid=True)   # Plost the dataframe and adds a grid to the chart
+ax = dataFrame.plot()       # Creates a pyplot chart
+
 ###########################
 ### Regular Expressions ###
 ###########################
