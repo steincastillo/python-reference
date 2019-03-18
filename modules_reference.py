@@ -22,7 +22,7 @@ import numpy as np  # standard module import
 # Creating numpy arrays
 a = np.array([2, 3, 4])                 # Creates a single numpy array. values must be passed as a list
 b = np.array([1.2, 3.5, 5.1])           # Creates a numpy array
-c = np.array([[1, 2, 3],  [4, 5,6]])    # Creates a 2 dimensional array
+c = np.array([[1, 2, 3],  [4, 5, 6]])    # Creates a 2 dimensional array
 d = np.array([1, 2, 3], dtype = 'float64') # Creates numpy array indicating the data type
 
 # Other methods to create numpy arrays
@@ -54,6 +54,16 @@ ad = np.zeros ((3,4), dtype= np.complex_)   # Shorthand for complex128
 ad = np.zeros ((3,4), dtype= np.complex64) # Complex number, represented by two 32-bit floats
 ad = np.zeros ((3,4), dtype= np.complex128) # Complex number, represented by two 64-bit floats
 
+# Numpy notation to access the array
+nd1 = np.array([[1, 2, 3, 4],  [4, 5, 6, 7]], np.int32)    # Creates a 2 dimensional array
+# Numpy notation to access array: nd1[row, col] 
+# Numpy arrays are 0 base index
+nd1[0, 0]           # Returns 1 (column 0, row 0)
+nd1[1, 0]           # Returns 4 (column 1, row 0)
+nd1[-1, :]          # Returns the last row and all the columns
+nd1[:, 2]           # Returns all the rows column 2
+nd1[1, :]           # Returns column 1 all the rows
+
 
 array = np.asarray(list)                    # Convert list to array
 list = array.tolist()                       # Convert array to list
@@ -65,9 +75,30 @@ a.dtype             # returns the array type: int32
 b.dtype             # returns the array type: float64
 d.dtype             # Returns float64
 a.ndim              # Returns array dimensions: 1
-c.ndim              # Retruns array dimensions: 2
+c.ndim              # Returns array dimensions: 2
+a.size              # Returns the number of elements in the array
 a.shape             # Returns a tuple with the array shape: (3,)
-c.shape             # Retruns a tuple with array shape: (2, 3)
+c.shape             # Returns a tuple with array shape: (2, 3)
+c.shape[0]          # Returns the number of rows in the array
+c.shape[1]          # Returns the number of columns in the array
+
+# Operation on arrays
+# Sum
+a.sum()             # Returns the sum of the elements of the array
+a.sum(axis=0)       # Returns the sum of the columns in the array
+a.som(axis=1)       # Returns the sum of the rows in the array
+# minimum/maximum values
+a.min()             # Returns the minimun value in the array
+a.min(axis=0)       # Returns the minimum value of each column
+a.min(axis=1)       # Returns the minimun value of each row
+a.max()             # Returns the maximum value of the array
+a.max(axis=0)       # Returns the maximum value of each columna
+a.max(axis=1)       # Returns the maximum value of each row
+a.argmax()          # Returns the index of the maximum value
+# Mean
+a.mean()            # Returns the mean value of the array
+a.mean(axis=0)      # Returns the mean of each column
+a.mean(axis=1)      # Returns the mean of each row
 
 # Numpy constants
 np.pi           # pi
