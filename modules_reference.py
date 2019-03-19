@@ -16,6 +16,8 @@ Table of Contents:
 
 ### NUMPY ###
 # Description: Provides advance functionality to operate and manipualte arrays
+# Additional documentation can be found at: https://docs.scipy.org/doc/numpy/index.html
+# Additional reference can be found at: https://docs.scipy.org/doc/numpy/reference/index.html
 
 import numpy as np  # standard module import
 
@@ -151,10 +153,13 @@ dataFrame = pd.read_json(file.json)                             # Imports a JSON
 
 
 # Create an empty dataframe
-dataframe = pd.dataFrame(data = np.nan, index = [0, 1, 2, 3, 4], columns = ['A', 'B'])
+dataframe = pd.DataFrame(data = np.nan, index = [0, 1, 2, 3, 4], columns = ['A', 'B'])
 
 # Insert a column in a specific location
 dataFrame.insert(loc=2, column='A', value=0)        # Inserts a column named A on the after the 2nd column with value 0
+
+# Delete a column in the dataframe
+dataFrame = dataFrame.drop(['column', axis=1])
 
 # Get the index of a column
 dataFrame.columns.get_loc('column')                 # Returns the index of column
@@ -311,7 +316,6 @@ print (re.sub('Road', 'Rd', street)) # Returns 21 Ramakrishna Rd
 ##############
 ### SQLITE ###
 ##############
-
 
 # Description: Light weight database manager
 
