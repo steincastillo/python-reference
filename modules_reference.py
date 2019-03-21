@@ -158,6 +158,9 @@ dataframe = pd.DataFrame(data = np.nan, index = [0, 1, 2, 3, 4], columns = ['A',
 # Insert a column in a specific location
 dataFrame.insert(loc=2, column='A', value=0)        # Inserts a column named A on the after the 2nd column with value 0
 
+# Reaname a column in dataframe
+dataFrame = dataFrame.rename(columns={'old name1':'new name1', 'old name2':'new name2'})
+
 # Delete a column in the dataframe
 dataFrame = dataFrame.drop(['column', axis=1])
 
