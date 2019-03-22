@@ -142,9 +142,11 @@ dataframe = pd.read_csv(file, encoding = 'utf-8')               # imports a CSV 
 
 dataframe.drop('feature', axis = 1)                             # Eliminates a column 'feature' from the dataframe
                                                                 # axis = 0 indicates a row, axis = 1 indicates a column
-
+# Managing missing information
 dataframe.dropna()                                              # Eliminate all NaN observations
 dataframe.fillna(0)                                             # Replace all NaN values with 0. A different value can be specified
+datafrane.fillna(method='ffill')                                # NaN values forward filling
+dataframe.fillna(method='backfill')                             # NaN values backward filling
                                                                 
 dataframe = pd.read_csv(file).drop('feature', axis = 1)         # Reads the dataframe and eliminates the column feature
 dataframe = pd.DataFrame(list)                                  # Convert an existing dictionary into a dataframe
