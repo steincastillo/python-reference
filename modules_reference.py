@@ -129,7 +129,6 @@ scipy.constants.nano            # Nano 1e-9
 
 import pandas as pd         # Standard module import
 
-
 # Reading datasets
 dataframe = pd.read_csv(file)                                   # Imports a CSV file as dataframe
 dataframe = pd.read_csv(file, delimiter=r"\s+")                 # Imports a <SPACE> separated file
@@ -168,6 +167,12 @@ dataFrame = dataFrame.drop(['column', axis=1])
 
 # Get the index of a column
 dataFrame.columns.get_loc('column')                 # Returns the index of column
+
+# Reverse a dataframe
+dataframe.iloc[::-1]
+
+# Reset the index of a dataframe
+dataframe.reset_index(drop=True, inplace=True)
 
 # Dataframe slicing
 df1 = dataframe['feature']                          # Creates a new dataframe (df1) with a copy of a feature from dataframe
@@ -236,6 +241,10 @@ dataframe['feature'].mean()     # Returns the mean of values of 'feature'
 dataFrame.plot()            # Plots the content of the dataframe
 dataFrame.plot(grid=True)   # Plost the dataframe and adds a grid to the chart
 ax = dataFrame.plot()       # Creates a pyplot chart
+ax.set(title='Title', xlabel='x axis label', ylabel='y axis label') # Set chart properties
+# Other chart examples
+ax = dataFrame.plot(title='Title', linewidth=2.5)
+
 
 ###########################
 ### Regular Expressions ###
