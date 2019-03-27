@@ -163,7 +163,7 @@ dataFrame.insert(loc=2, column='A', value=0)        # Inserts a column named A o
 dataFrame = dataFrame.rename(columns={'old name1':'new name1', 'old name2':'new name2'})
 
 # Delete a column in the dataframe
-dataFrame = dataFrame.drop(['column', axis=1])
+dataFrame = dataFrame.drop(['column'], axis=1)
 
 # Get the index of a column
 dataFrame.columns.get_loc('column')                 # Returns the index of column
@@ -244,6 +244,8 @@ ax = dataFrame.plot()       # Creates a pyplot chart
 ax.set(title='Title', xlabel='x axis label', ylabel='y axis label') # Set chart properties
 # Other chart examples
 ax = dataFrame.plot(title='Title', linewidth=2.5)
+ax = dataFrame.hist()           # Plots a histogram
+ax = dataFrame.hist(bins=20)    # Plots a histogram with 20 bins
 
 
 ###########################
