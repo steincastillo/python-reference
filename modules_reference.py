@@ -152,7 +152,6 @@ dataframe = pd.DataFrame(list)                                  # Convert an exi
     
 dataFrame = pd.read_json(file.json)                             # Imports a JSON file as dataframe
 
-
 # Create an empty dataframe
 dataframe = pd.DataFrame(data = np.nan, index = [0, 1, 2, 3, 4], columns = ['A', 'B'])
 
