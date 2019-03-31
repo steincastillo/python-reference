@@ -9,6 +9,7 @@ Table of Contents:
     numpy
     scypi
     pandas
+    matplotlib
     regular expressions
     sqlite
     io
@@ -120,6 +121,16 @@ scipy.constants.Avogrado        # Avogrado number
 scipy.constants.kilo            # Kilo 1e3
 scipy.constants.mega            # Mega 1e6
 scipy.constants.nano            # Nano 1e-9
+
+# Create random gaussian data sample
+sample = np.random.normal(center, std_deviation, size)
+# Example:
+sample = np.random.normal(0, 2, 20) # Gaussian sample, center 0, standard deviation 2, 20 numbers
+
+# Create evenly spaced interval
+interval = np.linspace(start, stop, number, dtype=type)
+# Example:
+interval = np.linspace(0, 10, 11, dtype=int)    # Returns an interval of ints from 0 to 10 -> [0..10]
 
 ##############
 ### PANDAS ###
@@ -245,6 +256,20 @@ ax.set(title='Title', xlabel='x axis label', ylabel='y axis label') # Set chart 
 ax = dataFrame.plot(title='Title', linewidth=2.5)
 ax = dataFrame.hist()           # Plots a histogram
 ax = dataFrame.hist(bins=20)    # Plots a histogram with 20 bins
+
+##################
+### MATPLOTLIB ###
+##################
+
+import matplotlib.pyplot as plt
+
+# Basic line chart 
+fig, ax = plt.subplots()    # Create figure
+ax.plot(xdata, ydata)       # plot data
+# Set chart properties
+ax.set(xlabel='x label', ylabel='y label', title='Chart Title')
+ax.grid()   # Diplay chart grid standard parameters
+ax.grid(color='r')  # Red color grid
 
 
 ###########################
