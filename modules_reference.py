@@ -262,6 +262,7 @@ ax = dataFrame.hist(bins=20)    # Plots a histogram with 20 bins
 ##################
 
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter # Module support configurable tick locating and formatting
 
 # Basic line chart 
 fig, ax = plt.subplots()    # Create figure
@@ -271,6 +272,55 @@ ax.set(xlabel='x label', ylabel='y label', title='Chart Title')
 ax.grid()   # Diplay chart grid standard parameters
 ax.grid(color='r')  # Red color grid
 
+# Formatting the plot
+print(plt.style.available)      # Print the available formatting styles
+plt.style.use('fivethirtyeight')    # Apply formatting style
+lables = ax.get_xticklabels()       # Get x axis labels attributes
+plt.setp(labels, rotation=45)       # Set xlabels rotation to 45 degrees
+# set xlabel font size:
+plt.xlabel ('xlabel', fontsize=10)  # Method 1
+plt.setp(labels, fontsize=10)       # Method 2
+
+# Adding elements to the chart
+ax.axvline(xvalue)      # Draw a vertical line at xvalue
+ax.axhline(yvalue)      # Draw a horizontal line at yvalue
+
+# Colors and formatting elements
+'''
+Colors
+    b: Blue
+    g: Green
+    r: Red
+    c: Cyan
+    m: Magenta
+    y: Yellow
+    w: White
+
+Line style
+    :  .......
+    -. --.--.--.
+    -- ---------
+    -
+
+Markers
+    . Point
+    , Pixel
+    o Circle
+    v Triangle down
+    ^ Triangle up
+    < Triangle left
+    > Triangle right
+    1 Tri down
+    2 Tri up
+    3 Tri left
+    4 Tri right
+    8 Octagon
+    s Square
+    p Pentagomn
+    s Star
+    h Hexagon1
+    H Hexagon2
+'''
 
 ###########################
 ### Regular Expressions ###
