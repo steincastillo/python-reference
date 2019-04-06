@@ -210,8 +210,9 @@ value = dataframe[dataframe['feature']==value]      # Returns a dataframe with t
 # Convert dataset into numpy array
 dataset =  dataframe.values
 
-# Get quick count of rows in a DataFrame
+# Get quick count of rows/columns in a DataFrame
 len(dataframe.index)
+len(dataFrame.columns)
 
 # iterate over the rows of a dataframe
 for index, row in dataframe.iterrows():
@@ -260,6 +261,13 @@ ax = dataFrame.hist(bins=20)    # Plots a histogram with 20 bins
 ##################
 ### MATPLOTLIB ###
 ##################
+
+'''
+Used to produce charts. Works well with pandas dataframe and numpy arrays
+
+More information:
+https://matplotlib.org/index.html
+'''
 
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter # Module support configurable tick locating and formatting
